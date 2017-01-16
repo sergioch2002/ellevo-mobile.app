@@ -1,5 +1,7 @@
 ﻿using System;
-
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -20,6 +22,7 @@ namespace Ellevo.mobile.app.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            MobileCenter.Configure("1662b144-959f-4cc5-ae86-3cbaad25fbcd");
             LoadApplication(new App());
         }
     }
