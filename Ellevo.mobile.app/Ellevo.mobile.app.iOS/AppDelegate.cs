@@ -22,6 +22,12 @@ namespace Ellevo.mobile.app.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            // Newer version of Xamarin Studio and Visual Studio provide the
+            // ENABLE_TEST_CLOUD compiler directive in the Debug configuration,
+            // but not the Release configuration.
+#if ENABLE_TEST_CLOUD
+Xamarin.Calabash.Start();
+#endif
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

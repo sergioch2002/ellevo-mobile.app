@@ -11,23 +11,7 @@ namespace Ellevo.mobile.app
     {
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "Ellevo.mobile.app",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-
-            MainPage = new NavigationPage(content);
+            MainPage = new StartPage();
         }
 
         protected override void OnStart()

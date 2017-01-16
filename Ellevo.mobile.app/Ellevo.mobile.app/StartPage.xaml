@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
+             x:Class="Ellevo.mobile.app.StartPage">
+  <ContentPage.Content>
+
+    <StackLayout BackgroundColor="#D0CAC8">
+      <StackLayout.Children>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 40, 0, 0">
+          <!--<Image Source="{local:ImageResource Ellevo.mobile.app.images.logomobile-150x150-01.png}"
+                 HeightRequest="150"
+                 WidthRequest="150"/>-->
+
+        </StackLayout>
+        <!--
+        BackgroundColor="#2DBDB6"
+        HeightRequest="200"
+        WidthRequest="200"
+        -->
+
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 50, 0, 0">
+
+          <StackLayout Padding="0, 0, 0, 40" BackgroundColor="#D0CAC8" VerticalOptions="Start">
+            <Label Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="Black"
+                   VerticalOptions="Start"/>
+          </StackLayout>
+
+          <!--<Label Text="Informe a URL de acesso ao sistema"
+                 TextColor="Default"
+                 FontSize="16"
+                 HorizontalTextAlignment="Center"
+                 VerticalOptions="Center"/>-->
+          <Entry x:Name="URL" Placeholder="Url" Keyboard="Url" Text="Informe a URL de acesso ao sistema"/>
+          <StackLayout HorizontalOptions="End"  Padding="0, 100, 0, 0">
+            <Button Text="Confirma"
+                    BackgroundColor="#2DBDB6"
+                    FontSize="Large"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnConfirmClicked"
+                    WidthRequest="160"
+                    HeightRequest="64"
+                    BorderWidth="0"
+                    BorderColor="Transparent"/>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout.Children>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
