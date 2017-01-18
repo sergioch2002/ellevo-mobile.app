@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
-             x:Class="Ellevo.mobile.app.LoginPage">
+             x:Class="Ellevo.mobile.app.LoginPage"
+             Title="Login">
   <ContentPage.Content>
+    <ScrollView>
     <StackLayout BackgroundColor="#D0CAC8">
       <StackLayout.Children>
         <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
@@ -12,56 +14,56 @@
                  WidthRequest="150"/>
         </StackLayout>
         <!--Container do login-->
-        <StackLayout Padding="0, 30, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
-          <Label Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
+        <StackLayout Padding="0, 80, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
+          <Label x:Name="lblRestrito" Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
                  VerticalTextAlignment="Start"
                  FontAttributes="Bold"
                  FontSize="Medium"
                  TextColor="Black"
                  VerticalOptions="Start"/>
-        <Label Text="Digite o seu usuário e senha para acessar:" HorizontalTextAlignment="Center"
-                 VerticalTextAlignment="Start"
-                 FontAttributes="Italic"
-                 FontSize="Small"
-                 TextColor="Black"
-                 VerticalOptions="Start"/>
+          <Label x:Name="lblMessageUsuSenha" Text="Digite o seu usuário e senha para acessar:" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Italic"
+                   FontSize="Small"
+                   TextColor="Black"
+                   VerticalOptions="Start"/>
           <!--Caixa de login-->
-          <StackLayout HorizontalOptions="StartAndExpand" Padding="0, 20, 0, 0" >
-        <Label Text="USUARIO" HorizontalTextAlignment="Start"
-                 VerticalTextAlignment="Start"
-                 FontAttributes="Bold"
-                 FontSize="Small"
-                 TextColor="Black"
-                 VerticalOptions="Start"/>
-<Label Text="SENHA" HorizontalTextAlignment="Start"
-                 VerticalTextAlignment="Start"
-                 FontAttributes="Bold"
-                 FontSize="Small"
-                 TextColor="Black"
-                 VerticalOptions="Start"/>
-<Label Text="DOMINIO" HorizontalTextAlignment="Start"
-                 VerticalTextAlignment="Start"
-                 FontAttributes="Bold"
-                 FontSize="Small"
-                 TextColor="Black"
-                 VerticalOptions="Start"/>
+          <ScrollView>
+            <StackLayout x:Name="boxLogin" VerticalOptions="StartAndExpand" Padding="0, 20, 0, 0" >
+              <Label x:Name="lblDominio" Text="" HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Start"
+                               FontAttributes="Bold"
+                               FontSize="Small"
+                               TextColor="Black"/>
+              <Entry x:Name="txtUsuario" Placeholder="Usuario"
+                       FontSize="Default"
+                       TextColor="Black"
+              Keyboard="Default"/>
+              <Entry x:Name="txtSenha" Placeholder="Senha"
+                               FontSize="Default"
+                               TextColor="Black"
+              Keyboard="Default"
+              IsPassword="True"/>
             </StackLayout>
-            <!--Caixa do botão ENTRAR-->
-        <StackLayout HorizontalOptions="End" Padding="0, 20, 0, 0">
-            <Button Text="ENTRAR"
+          </ScrollView>
+          <!--Caixa do botão ENTRAR-->
+          <StackLayout HorizontalOptions="End" Padding="0, 20, 0, 0">
+            <Button x:Name="btnEntrar" Text="ENTRAR"
                     BackgroundColor="#2DBDB6"
                     FontSize="Medium"
                     TextColor="White"
                     HorizontalOptions="End"
                     VerticalOptions="Center"
                     WidthRequest="100"
-                    HeightRequest="40"
+                    HeightRequest="50"
                     BorderWidth="0"
-                    BorderColor="Transparent"/>
+                    BorderColor="Transparent"
+                    Clicked="OnEnterClicked"/>
           </StackLayout>
-          
+
         </StackLayout>
       </StackLayout.Children>
     </StackLayout>
+    </ScrollView>
   </ContentPage.Content>
 </ContentPage>

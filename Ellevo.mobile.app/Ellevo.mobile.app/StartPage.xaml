@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
-             x:Class="Ellevo.mobile.app.StartPage">
+             x:Class="Ellevo.mobile.app.StartPage"
+             Title="Acesso">
   <ContentPage.Content>
-
+    <ScrollView>
     <StackLayout BackgroundColor="#D0CAC8">
       <StackLayout.Children>
         <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
@@ -35,7 +36,12 @@
                  FontSize="16"
                  HorizontalTextAlignment="Center"
                  VerticalOptions="Center"/>-->
-          <Entry x:Name="URL" Placeholder="Url" Keyboard="Url" Text="Informe a URL de acesso ao sistema"/>
+          <Entry x:Name="URL" 
+                 Placeholder="Url" 
+                 Keyboard="Url" 
+                 Text="Informe a URL de acesso ao sistema"
+                 Completed="OnEntryCompleted"
+                 />
           <StackLayout HorizontalOptions="End"  Padding="0, 100, 0, 0">
             <Button Text="Confirma"
                     BackgroundColor="#2DBDB6"
@@ -52,5 +58,6 @@
         </StackLayout>
       </StackLayout.Children>
     </StackLayout>
+    </ScrollView>
   </ContentPage.Content>
 </ContentPage>
