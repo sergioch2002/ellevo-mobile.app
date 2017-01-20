@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
+             x:Class="Ellevo.mobile.app.TotalsPage"
+             Title="Totais">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+  </ContentPage.ToolbarItems>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout BackgroundColor="#D0CAC8">
+        <StackLayout.Children>
+          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 0, 0, 10">
+            <Image Source="{local:ImageResource Ellevo.mobile.app.images.logomobile-150x150-01.png}"
+                   HeightRequest="100"
+                   WidthRequest="100"/>
+          </StackLayout>
+          <!--Instruções-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblInstrucao" Text="Instruções" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"
+                   />
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblInstrucaoValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"
+                   />
+            </StackLayout>
+          </StackLayout>
+          <!--Acompanhamentos-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblAcompanhamento" Text="Acompanhamentos" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblAcompanhamentoValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          <!--Chamados-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblChamado" Text="Chamados" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblChamadoValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          <!--Trâmites-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblTramite" Text="Trâmites" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblTramiteValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          <!--Tarefas-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblTarefa" Text="Tarefas" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblTarefaValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          <!--Providências-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblProvidencia" Text="Providências" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblProvidenciaValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          <!--Aprovações-->
+          <StackLayout Orientation="Horizontal" Padding="30, 0, 30, 0">
+            <StackLayout HorizontalOptions="StartAndExpand">
+              <Label x:Name="lblAprovacao" Text="Aprovações" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand">
+              <Label x:Name="lblAprovacaoValor" Text="0" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   TextColor="White"/>
+            </StackLayout>
+          </StackLayout>
+          
+          </StackLayout.Children>
+      </StackLayout>
+      </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

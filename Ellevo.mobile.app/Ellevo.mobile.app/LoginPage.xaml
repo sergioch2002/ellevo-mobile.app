@@ -14,7 +14,7 @@
                  WidthRequest="150"/>
         </StackLayout>
         <!--Container do login-->
-        <StackLayout Padding="0, 80, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
+        <StackLayout Padding="0, 50, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
           <Label x:Name="lblRestrito" Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
                  VerticalTextAlignment="Start"
                  FontAttributes="Bold"
@@ -47,7 +47,7 @@
             </StackLayout>
           </ScrollView>
           <!--Caixa do botão ENTRAR-->
-          <StackLayout HorizontalOptions="End" Padding="0, 20, 0, 0">
+          <StackLayout HorizontalOptions="Center" Padding="0, 20, 0, 0">
             <Button x:Name="btnEntrar" Text="ENTRAR"
                     BackgroundColor="#2DBDB6"
                     FontSize="Medium"

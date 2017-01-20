@@ -26,8 +26,11 @@ namespace Ellevo.mobile.app
             if (string.IsNullOrEmpty(URL.Text))
                 return;
 
-            if(ValidateUrl(URL.Text))
-                GetConfiguration(URL.Text);
+            if (ValidateUrl(URL.Text.TrimStart().TrimEnd().Trim()))
+            {
+                Sessao.UrlBase = URL.Text;
+                GetConfiguration(URL.Text.TrimStart().TrimEnd().Trim());
+            }
         }
 
         private void OnEntryCompleted(object sender, EventArgs args)
@@ -35,10 +38,13 @@ namespace Ellevo.mobile.app
             Entry entry = (Entry)sender;
 
             if (ValidateUrl(entry.Text.TrimStart().TrimEnd().Trim()))
+            {
+                Sessao.UrlBase = URL.Text;
                 GetConfiguration(URL.Text);
+            }
 
         }
-
+       
         private bool ValidateUrl(string url)
         {
             Regex httpAndWWW = new Regex(@"/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)");
@@ -60,7 +66,7 @@ namespace Ellevo.mobile.app
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
 
-            endpoint += "/mobile/api/v1/mob/configuracao";
+            endpoint += "/api/v1/mob/configuracao";
             HttpClientHandler handler = new HttpClientHandler()
             {
                 PreAuthenticate = true,
@@ -77,9 +83,6 @@ namespace Ellevo.mobile.app
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("amx", "4d53bce03ec34c0a911182d4c228ee6c:A93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps102ciuabc=");
 
                 var response = await client.GetAsync(endpoint);
-
-                // Post
-                // var response = client.PostAsJsonAsync("http://desenv.0800net.com.br/", obj).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
