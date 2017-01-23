@@ -14,7 +14,7 @@ namespace Ellevo.mobile.app
         public App()
         {
             MobileCenter.Start(typeof(Analytics), typeof(Crashes));
-            MainPage = new NavigationPage(new ListaInstrucoes());
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()

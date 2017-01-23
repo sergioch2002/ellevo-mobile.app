@@ -6,8 +6,8 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
   </ContentPage.Padding>
   <StackLayout>
-    <ListView x:Name="listView" >
-      <ListView.ItemsSource>
+    <ListView x:Name="listView" VerticalOptions="StartAndExpand">
+      <!--<ListView.ItemsSource>
         <x:Array Type="{x:Type Color}">
           <x:Static Member="Color.Aqua" />
           <x:Static Member="Color.Black" />
@@ -27,16 +27,31 @@
           <Color>White</Color>
           <Color>Yellow</Color>
         </x:Array>
-      </ListView.ItemsSource>
+      </ListView.ItemsSource>-->
 
-      <ListView.SelectedItem>
+      <!--<ListView.SelectedItem>
         <Color>Lime</Color>
-      </ListView.SelectedItem>
+      </ListView.SelectedItem>-->
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+
+            <StackLayout Padding="10, 10, 0, 0">
+              <Label Text="{Binding Color}" />
+            </StackLayout>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
     </ListView>
 
-    <BoxView x:Name="boxView"
+
+    
+    <!--<BoxView x:Name="boxView"
              Color="{Binding Source={x:Reference listView},
              Path=SelectedItem}"
-             HeightRequest="100" />
+             HeightRequest="100" />-->
+
+
   </StackLayout>
 </ContentPage>

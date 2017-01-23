@@ -37,10 +37,10 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="ImageResourceExtension.cs" />
-    <Compile Include="ListaInstrucoes.xaml.cs">
+    <Compile Include="pages\ListaInstrucoes.xaml.cs">
       <DependentUpon>ListaInstrucoes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.xaml.cs">
+    <Compile Include="pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="objects\Configuracoes.cs" />
@@ -50,13 +50,13 @@
     <Compile Include="objects\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="objects\Sessao.cs" />
-    <Compile Include="StartPage.xaml.cs">
+    <Compile Include="pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TotalsPage.xaml.cs">
+    <Compile Include="pages\TotalsPage.xaml.cs">
       <DependentUpon>TotalsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TotalsPageSquares.xaml.cs">
+    <Compile Include="pages\TotalsPageSquares.xaml.cs">
       <DependentUpon>TotalsPageSquares.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -107,7 +107,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="StartPage.xaml">
+    <EmbeddedResource Include="pages\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -117,25 +117,25 @@
     <EmbeddedResource Include="images\logomobile-150x150-01.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginPage.xaml">
+    <EmbeddedResource Include="pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TotalsPage.xaml">
+    <EmbeddedResource Include="pages\TotalsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TotalsPageSquares.xaml">
+    <EmbeddedResource Include="pages\TotalsPageSquares.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ListaInstrucoes.xaml">
+    <EmbeddedResource Include="pages\ListaInstrucoes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
