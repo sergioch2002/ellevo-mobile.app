@@ -4,56 +4,54 @@
              xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
              x:Class="Ellevo.mobile.app.StartPage"
              Title="Página Inicial">
-  
+  <!--BackgroundImage="splash1536x2048.png">-->
   <ContentPage.Content>
     <ScrollView>
-    <StackLayout BackgroundColor="#D0CAC8">
-      <StackLayout.Children>
-        <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
-          <Image Source="{local:ImageResource Ellevo.mobile.app.images.logomobile-150x150-01.png}"
-                 HeightRequest="150"
-                 WidthRequest="150"/>
+      <StackLayout>
+        <StackLayout.Children>
+          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
+            <Image Source="{local:ImageResource Ellevo.mobile.app.images.logomobile150x15001.png}"
+                   HeightRequest="150"
+                   WidthRequest="150"/>
 
-        </StackLayout>
-        
-        <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 50, 0, 0">
-
-          <StackLayout Padding="0, 0, 0, 40" BackgroundColor="#D0CAC8" VerticalOptions="Start">
-            <Label Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Start"
-                   FontAttributes="Bold"
-                   FontSize="Large"
-                   TextColor="Black"
-                   VerticalOptions="Start"/>
           </StackLayout>
 
-          <!--<Label Text="Informe a URL de acesso ao sistema"
+          <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 50, 0, 0">
+
+            <StackLayout Padding="0, 0, 0, 40" VerticalOptions="Start">
+              <Label Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Start"
+                     FontSize="Large"
+                     TextColor="White"
+                     VerticalOptions="Start"/>
+            </StackLayout>
+
+            <!--<Label Text="Informe a URL de acesso ao sistema"
                  TextColor="Default"
                  FontSize="16"
                  HorizontalTextAlignment="Center"
                  VerticalOptions="Center"/>-->
-          <Entry x:Name="URL" 
-                 Placeholder="Url" 
-                 Keyboard="Url" 
-                 Text="Informe a URL de acesso ao sistema"
-                 Completed="OnEntryCompleted"
-                 />
-          <StackLayout HorizontalOptions="Center"  Padding="0, 100, 0, 0">
-            <Button Text="Confirma"
-                    BackgroundColor="#2DBDB6"
-                    FontSize="Large"
-                    TextColor="White"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Clicked="OnConfirmClicked"
-                    WidthRequest="160"
-                    HeightRequest="64"
-                    BorderWidth="0"
-                    BorderColor="Transparent"/>
+            <Entry x:Name="URL"
+                   Placeholder="Url"
+                   Keyboard="Url"
+                   Text="Informe a URL de acesso ao sistema"
+                   Completed="OnEntryCompleted"/>
+            <StackLayout HorizontalOptions="Center"  Padding="0, 100, 0, 0">
+              <Button x:Name="btnConfirma" Text="Confirma"
+                      BackgroundColor="#2DBDB6"
+                      FontSize="Large"
+                      TextColor="White"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Center"
+                      Clicked="OnConfirmClicked"
+                      WidthRequest="160"
+                      HeightRequest="64"
+                      BorderWidth="0"
+                      BorderColor="Transparent"/>
+            </StackLayout>
           </StackLayout>
-        </StackLayout>
-      </StackLayout.Children>
-    </StackLayout>
+        </StackLayout.Children>
+      </StackLayout>
     </ScrollView>
   </ContentPage.Content>
 </ContentPage>

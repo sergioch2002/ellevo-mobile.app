@@ -23,12 +23,20 @@ namespace Ellevo.mobile.app
 
         private void OnConfirmClicked(object sender, EventArgs args)
         {
+            var animation = new Animation(callback: d => btnConfirma.Rotation = d,
+                                  start: btnConfirma.Rotation,
+                                  end: btnConfirma.Rotation + 360,
+                                  easing: Easing.SpringOut);
+            animation.Commit(btnConfirma, "Loop", length: 400);
+
             if (string.IsNullOrEmpty(URL.Text))
                 return;
 
             if (ValidateUrl(URL.Text.TrimStart().TrimEnd().Trim()))
+            //if (true)
             {
                 Sessao.UrlBase = URL.Text;
+                //Sessao.UrlBase = "http://desenv.0800net.com.br/mobile";
                 GetConfiguration(URL.Text.TrimStart().TrimEnd().Trim());
             }
         }
@@ -40,11 +48,12 @@ namespace Ellevo.mobile.app
             if (ValidateUrl(entry.Text.TrimStart().TrimEnd().Trim()))
             {
                 Sessao.UrlBase = URL.Text;
+                //Sessao.UrlBase = "http://desenv.0800net.com.br/mobile";
                 GetConfiguration(URL.Text);
             }
 
         }
-       
+
         private bool ValidateUrl(string url)
         {
             Regex httpAndWWW = new Regex(@"/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)");
@@ -63,6 +72,7 @@ namespace Ellevo.mobile.app
         }
         public async void GetConfiguration(string endpoint)
         {
+            //endpoint = "http://desenv.0800net.com.br/mobile";
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
 

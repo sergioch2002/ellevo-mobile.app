@@ -57,7 +57,6 @@ namespace Ellevo.mobile.app
                     lblTarefaValor.Text = telaInicial.TarefasTotal.ToString();
                     lblProvidenciaValor.Text = telaInicial.ProvidenciasTotal.ToString();
                     lblAprovacaoValor.Text = telaInicial.ProcessoDeAprovacaoTotal.ToString();
-                    //await Navigation.PushAsync(new LoginPage(conf));
                 }
                 else
                 {
@@ -73,7 +72,7 @@ namespace Ellevo.mobile.app
 
         async void OnTappedInstrucao(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TotalsPageSquares());
+            await Navigation.PushAsync(new ListaInstrucoes());
         }
     }
 }

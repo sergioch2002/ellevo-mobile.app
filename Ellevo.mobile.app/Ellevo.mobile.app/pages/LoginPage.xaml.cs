@@ -60,6 +60,7 @@ namespace Ellevo.mobile.app
 
         public async void GetToken(string endpoint)
         {
+            //endpoint = "http://desenv.0800net.com.br/mobile";
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
 
@@ -78,9 +79,12 @@ namespace Ellevo.mobile.app
 
                 var postData = new List<KeyValuePair<string, string>>();
                 postData.Add(new KeyValuePair<string, string>("username", txtUsuario.Text));
+                //postData.Add(new KeyValuePair<string, string>("username", "davila0800net"));
                 postData.Add(new KeyValuePair<string, string>("password", txtSenha.Text));
+                //postData.Add(new KeyValuePair<string, string>("password", "123456"));
                 postData.Add(new KeyValuePair<string, string>("grant_type", "password"));
                 postData.Add(new KeyValuePair<string, string>("dominio", configuracoes.ListaDominios[picker.SelectedIndex].Id.ToString()));
+                //postData.Add(new KeyValuePair<string, string>("dominio", "0"));
                 postData.Add(new KeyValuePair<string, string>("client_id", "123"));
                 
                 HttpContent content = new FormUrlEncodedContent(postData);

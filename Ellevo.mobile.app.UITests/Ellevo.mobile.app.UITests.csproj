@@ -67,10 +67,6 @@
       <Project>{f735c60b-759b-477b-9c55-a90e61c0f478}</Project>
       <Name>Ellevo.mobile.app.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ellevo.mobile.app\Ellevo.mobile.app.iOS\Ellevo.mobile.app.iOS.csproj">
-      <Project>{bd64bf90-ccff-4d5b-9b30-3a1d7be51e5c}</Project>
-      <Name>Ellevo.mobile.app.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
