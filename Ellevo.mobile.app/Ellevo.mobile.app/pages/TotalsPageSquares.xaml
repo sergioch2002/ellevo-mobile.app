@@ -55,6 +55,9 @@
 
         <!--Acompanhamentos-->
         <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedAcompanhamento"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblAcompanhamento" Text="Acompanhamentos" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 
@@ -64,38 +67,53 @@
 
         <!--Chamados-->
         <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedChamado"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblChamado" Text="Chamados" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 
           <Label x:Name="lblChamadoValor" Text="0" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-
+<!--Tramites-->
         <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedTramite"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblTramite" Text="Trâmites" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 
           <Label x:Name="lblTramiteValor" Text="0" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-
+<!--Tarefas-->
         <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedTarefa"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblTarefa" Text="Tarefas" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 
           <Label x:Name="lblTarefaValor" Text="0" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-
+<!--Providencias-->
         <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedProvidencia"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblProvidencia" Text="Providências" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 
           <Label x:Name="lblProvidenciaValor" Text="0" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
-
+<!--Aprovações-->
         <StackLayout Grid.Row="4" Grid.Column="0" Orientation="Vertical" Spacing="0" BackgroundColor="#2DBDB6">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappedAprovacao"/>
+          </StackLayout.GestureRecognizers>
           <Label x:Name="lblAprovacao" Text="Aprovações" HorizontalTextAlignment="Center"
                VerticalTextAlignment="Start"  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
 

@@ -22,8 +22,6 @@ namespace Ellevo.mobile.app
 
             GetDataFromApi();
         }
-
-        
         private async void GetDataFromApi()
         {
             string endpoint = Sessao.UrlBase;
@@ -76,7 +74,7 @@ namespace Ellevo.mobile.app
                         } 
                     }
 
-                    listView.ItemsSource = instrucoes;
+                    listView.ItemsSource = instrucoes.OrderByDescending(x => x.InstrucaoId);
                 }
                 else
                 {

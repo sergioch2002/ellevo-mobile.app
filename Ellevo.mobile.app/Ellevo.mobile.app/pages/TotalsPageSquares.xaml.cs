@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.pages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -69,10 +70,34 @@ namespace Ellevo.mobile.app
             Navigation.InsertPageBefore(new LoginPage(null), this);
             await Navigation.PopAsync();
         }
-
         async void OnTappedInstrucao(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ListaInstrucoes());
         }
+        async void OnTappedAcompanhamento(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaAcompanhamentos());
+        }
+        async void OnTappedAprovacao(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaAprovacoes());
+        }
+        async void OnTappedChamado(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaChamados());
+        }
+        async void OnTappedProvidencia(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaProvidencias());
+        }
+        async void OnTappedTarefa(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaTarefas());
+        }
+        async void OnTappedTramite(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaTramites());
+        }
+
     }
 }

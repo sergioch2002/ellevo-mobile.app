@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
-             x:Class="Ellevo.mobile.app.ListaInstrucoes"
-             Title="Instruções"
+             x:Class="Ellevo.mobile.app.pages.ListaTramites"
+  xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
+  Title="Trâmites"
              BackgroundImage="fundosemlogo.png">
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />

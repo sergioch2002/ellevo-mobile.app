@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ellevo.mobile.app.objects
+namespace Ellevo.mobile.app
 {
     public class Instrucao
     {

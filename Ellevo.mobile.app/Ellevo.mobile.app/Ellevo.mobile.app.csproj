@@ -37,9 +37,34 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="ImageResourceExtension.cs" />
+    <Compile Include="objects\Acompanhamento.cs" />
+    <Compile Include="objects\Atividade.cs" />
+    <Compile Include="objects\Chamado.cs" />
+    <Compile Include="objects\Conta.cs" />
     <Compile Include="objects\Instrucao.cs" />
+    <Compile Include="objects\Providencia.cs" />
+    <Compile Include="objects\Tarefa.cs" />
+    <Compile Include="objects\Tramite.cs" />
+    <Compile Include="pages\ListaAcompanhamentos.xaml.cs">
+      <DependentUpon>ListaAcompanhamentos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ListaAprovacoes.xaml.cs">
+      <DependentUpon>ListaAprovacoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ListaChamados.xaml.cs">
+      <DependentUpon>ListaChamados.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\ListaInstrucoes.xaml.cs">
       <DependentUpon>ListaInstrucoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ListaProvidencias.xaml.cs">
+      <DependentUpon>ListaProvidencias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ListaTarefas.xaml.cs">
+      <DependentUpon>ListaTarefas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ListaTramites.xaml.cs">
+      <DependentUpon>ListaTramites.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -130,6 +155,45 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\logomobile150x15001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaAcompanhamentos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaChamados.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaTramites.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaTarefas.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaProvidencias.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\ListaAprovacoes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\fundosemlogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
