@@ -82,6 +82,9 @@
     <Compile Include="pages\TotalsPageSquares.xaml.cs">
       <DependentUpon>TotalsPageSquares.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Springboard.xaml.cs">
+      <DependentUpon>Springboard.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Azure.Mobile, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -194,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\fundosemlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Springboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
