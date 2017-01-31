@@ -36,7 +36,15 @@ namespace Ellevo.mobile.app
             boxLogin.Children.Add(picker);
 
         }
+        private void OnUserEntryCompleted(object sender, EventArgs args)
+        {
+            txtSenha.Focus();
 
+        }
+        private void OnPassEntryCompleted(object sender, EventArgs args)
+        {
+            picker.Focus();
+        }
         private void SetViews()
         {
             lblDominio.Text = configuracoes.NomeSite;

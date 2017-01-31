@@ -70,6 +70,7 @@ namespace Ellevo.mobile.app
 
             return true;
         }
+
         public async void GetConfiguration(string endpoint)
         {
             //endpoint = "http://desenv.0800net.com.br/mobile";
@@ -108,6 +109,9 @@ namespace Ellevo.mobile.app
             }
         }
 
-
+        private void OnTextChanged(object sender, EventArgs args)
+        {
+            URL.Placeholder = "";
+        }
     }
 }

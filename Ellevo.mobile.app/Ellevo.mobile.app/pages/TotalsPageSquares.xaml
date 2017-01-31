@@ -4,8 +4,8 @@
              xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
              x:Class="Ellevo.mobile.app.TotalsPageSquares"
              Title="Totais"
-             Padding="10, 10, 10, 10">
-  <!--BackgroundImage="splash1536x2048.png" >-->
+             Padding="10, 10, 10, 10"
+  BackgroundImage="fundosemlogo.png" >
   <ContentPage.ToolbarItems>
     <ToolbarItem Text="Logout"/>
   </ContentPage.ToolbarItems>
