@@ -17,7 +17,8 @@
            VerticalOptions="Center"
            Text="{Binding Label}"
            TextColor="#3A444D"
-           FontSize="14"/>
+           FontSize="14"
+           LineBreakMode="TailTruncation"/>
 
     <Image x:Name="SwitchboardIcon"
            HorizontalOptions="EndAndExpand"
