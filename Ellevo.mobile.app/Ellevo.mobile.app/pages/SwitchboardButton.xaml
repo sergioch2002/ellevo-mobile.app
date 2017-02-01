@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ellevo.mobile.app.SwitchboardButton">
+  
+  <StackLayout Orientation="Vertical" Padding="10, 10, 10, 10">
+    <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="Start">
+      <Label x:Name="SwitchboardValor"
+           HorizontalOptions="Start"
+           VerticalOptions="Center"
+           Text="{Binding Valor}"
+           TextColor="#3A444D"
+           FontSize="14"/>
+      
+    <Label x:Name="SwitchboardLabel"
+           HorizontalOptions="Start"
+           VerticalOptions="Center"
+           Text="{Binding Label}"
+           TextColor="#3A444D"
+           FontSize="14"/>
+
+    <Image x:Name="SwitchboardIcon"
+           HorizontalOptions="EndAndExpand"
+           VerticalOptions="Center"
+           WidthRequest="35"
+           HeightRequest="35"
+           Source="{Binding Icon}" />
+    </StackLayout>
+    <BoxView Color="#2DBDB6" WidthRequest="200" HeightRequest="5" HorizontalOptions="Start" VerticalOptions="EndAndExpand"/>
+
+  </StackLayout>
+
+</ContentView>

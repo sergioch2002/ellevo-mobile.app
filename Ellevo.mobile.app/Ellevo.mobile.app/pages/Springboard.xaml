@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
+             x:Class="Ellevo.mobile.app.Springboard"
+             Title="Totais"
+             Padding="10, 10, 10, 10"
+  BackgroundImage="fundosemlogo.png">
+  
+  <!--  main page grid  -->
+  <ScrollView>
+  <Grid RowSpacing="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>
+
+    <!--  row background colors  -->
+    <BoxView Grid.Row="0"/>
+    <BoxView Grid.Row="1"/>
+    <BoxView Grid.Row="2"/>
+    <Image Grid.Row="0" Source="logomobile150x150.png" VerticalOptions="Start"/>
+    <!--  inner grid for button layouts  -->
+    <Grid Grid.Row="1" ColumnSpacing="30" HorizontalOptions="Center"
+          RowSpacing="30" VerticalOptions="Center">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+      <!--  button images  -->
+      <controls:SwitchboardButton x:Name="Aprovacao" Grid.Row="0" Grid.Column="0" Icon="book250.png" Label="Aprovações">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="AprovacaoButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Instrucao" Grid.Row="0" Grid.Column="1"  Icon="doc150.png" Label="Instruções">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="InstrucaoButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Acompanhamento" Grid.Row="1" Grid.Column="0"  Icon="book250.png" Label="Acompanhamentos">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="AcompanhamentoButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Chamado" Grid.Row="1" Grid.Column="1"  Icon="doc150.png" Label="Chamados">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="ChamadoButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Tramite" Grid.Row="2" Grid.Column="0"  Icon="book250.png" Label="Trâmites">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="TramiteButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Tarefa" Grid.Row="2" Grid.Column="1"  Icon="doc150.png" Label="Tarefas">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="TarefaButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+      <controls:SwitchboardButton x:Name="Providencia" Grid.Row="3" Grid.Column="0"  Icon="book250.png" Label="Providências">
+        <controls:SwitchboardButton.GestureRecognizers>
+          <TapGestureRecognizer Tapped="ProvidenciaButtonTapped" />
+        </controls:SwitchboardButton.GestureRecognizers>
+      </controls:SwitchboardButton>
+    </Grid>
+  </Grid>
+</ScrollView>
+
+</ContentPage>

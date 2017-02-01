@@ -18,8 +18,13 @@ namespace Ellevo.mobile.app.pages
         public ListaAcompanhamentos()
         {
             InitializeComponent();
-
+            SizeChanged += OnSizeChanged;
             GetDataFromApi();
+        }
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
+
         }
         private async void GetDataFromApi()
         {

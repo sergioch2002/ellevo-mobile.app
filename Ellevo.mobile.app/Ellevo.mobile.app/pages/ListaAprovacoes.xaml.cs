@@ -13,6 +13,12 @@ namespace Ellevo.mobile.app.pages
         public ListaAprovacoes()
         {
             InitializeComponent();
+            SizeChanged += OnSizeChanged;
+        }
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Ellevo.mobile.app
             configuracoes = config;
             
             InitializeComponent();
-
+            SizeChanged += OnSizeChanged;
             SetViews();
             picker = new Picker
             {
@@ -34,6 +34,11 @@ namespace Ellevo.mobile.app
             }
 
             boxLogin.Children.Add(picker);
+
+        }
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
 
         }
         private void OnUserEntryCompleted(object sender, EventArgs args)
@@ -106,7 +111,7 @@ namespace Ellevo.mobile.app
 
                     Sessao.Token = conf;
 
-                    await Navigation.PushAsync(new TotalsPageSquares());
+                    await Navigation.PushAsync(new Springboard());
                 }
                 else
                 {

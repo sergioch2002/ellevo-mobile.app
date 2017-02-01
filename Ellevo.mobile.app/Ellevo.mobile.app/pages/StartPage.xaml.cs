@@ -18,8 +18,15 @@ namespace Ellevo.mobile.app
         public StartPage()
         {
             InitializeComponent();
+            SizeChanged += OnSizeChanged;
+
         }
 
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
+
+        }
 
         private void OnConfirmClicked(object sender, EventArgs args)
         {

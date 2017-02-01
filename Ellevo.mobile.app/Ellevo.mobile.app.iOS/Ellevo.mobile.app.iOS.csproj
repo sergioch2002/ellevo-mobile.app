@@ -169,6 +169,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\logomobile150x150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Camera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\fundosemlogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

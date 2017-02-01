@@ -82,8 +82,11 @@
     <Compile Include="pages\TotalsPageSquares.xaml.cs">
       <DependentUpon>TotalsPageSquares.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Springboard.xaml.cs">
+    <Compile Include="pages\Springboard.xaml.cs">
       <DependentUpon>Springboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\SwitchboardButton.xaml.cs">
+      <DependentUpon>SwitchboardButton.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +157,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="images\logomobile150x15001.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="pages\ListaAcompanhamentos.xaml">
@@ -196,14 +195,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="images\fundosemlogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Springboard.xaml">
+    <EmbeddedResource Include="pages\Springboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\SwitchboardButton.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

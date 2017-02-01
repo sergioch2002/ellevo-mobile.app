@@ -103,7 +103,7 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="fundosemlogo.png" />
-    <Content Include="logomobile150x15001.png" />
+    <Content Include="logomobile150x150.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

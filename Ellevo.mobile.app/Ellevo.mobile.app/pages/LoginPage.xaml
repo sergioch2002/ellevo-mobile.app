@@ -10,7 +10,7 @@
       <StackLayout>
         <StackLayout.Children>
           <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
-            <Image Source="{local:ImageResource Ellevo.mobile.app.images.logomobile150x15001.png}"
+            <Image Source="logomobile150x150.png"
                    HeightRequest="150"
                    WidthRequest="150"/>
           </StackLayout>

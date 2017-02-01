@@ -13,13 +13,12 @@ using Xamarin.Forms;
 
 namespace Ellevo.mobile.app
 {
-    public partial class TotalsPageSquares : ContentPage
+    public partial class Springboard : ContentPage
     {
         TelaInicial telaInicial;
-        public TotalsPageSquares()
+        public Springboard()
         {
-            telaInicial = new objects.TelaInicial();
-
+            telaInicial = new TelaInicial();
             InitializeComponent();
             SizeChanged += OnSizeChanged;
             GetTotals(Sessao.UrlBase);
@@ -56,13 +55,13 @@ namespace Ellevo.mobile.app
                     var result = await response.Content.ReadAsStringAsync();
                     telaInicial = JsonConvert.DeserializeObject<TelaInicial>(result);
                     //Atribuição de valores
-                    lblInstrucaoValor.Text = telaInicial.InstrucaoTotal.ToString();
-                    lblAcompanhamentoValor.Text = telaInicial.AcompanhamentosTotal.ToString();
-                    lblChamadoValor.Text = telaInicial.ChamadosTotal.ToString();
-                    lblTramiteValor.Text = telaInicial.TramitesTotal.ToString();
-                    lblTarefaValor.Text = telaInicial.TarefasTotal.ToString();
-                    lblProvidenciaValor.Text = telaInicial.ProvidenciasTotal.ToString();
-                    lblAprovacaoValor.Text = telaInicial.ProcessoDeAprovacaoTotal.ToString();
+                    Instrucao.Valor = telaInicial.InstrucaoTotal.ToString() + "    ";
+                    Acompanhamento.Valor = telaInicial.AcompanhamentosTotal.ToString() + "    ";
+                    Chamado.Valor = telaInicial.ChamadosTotal.ToString() + "    ";
+                    Tramite.Valor = telaInicial.TramitesTotal.ToString() + "    ";
+                    Tarefa.Valor = telaInicial.TarefasTotal.ToString() + "    ";
+                    Providencia.Valor = telaInicial.ProvidenciasTotal.ToString() + "    ";
+                    Aprovacao.Valor = telaInicial.ProcessoDeAprovacaoTotal.ToString() + "    ";
                 }
                 else
                 {
@@ -70,39 +69,33 @@ namespace Ellevo.mobile.app
                 }
             }
         }
-        async void OnLogoutButtonClicked(object sender, EventArgs e)
-        {
-            Navigation.InsertPageBefore(new LoginPage(null), this);
-            await Navigation.PopAsync();
-        }
-        async void OnTappedInstrucao(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new ListaInstrucoes());
-        }
-        async void OnTappedAcompanhamento(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new ListaAcompanhamentos());
-        }
-        async void OnTappedAprovacao(object sender, EventArgs args)
+        async private void AprovacaoButtonTapped(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ListaAprovacoes());
         }
-        async void OnTappedChamado(object sender, EventArgs args)
+        async private void InstrucaoButtonTapped(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaInstrucoes());
+        }
+        async private void AcompanhamentoButtonTapped(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaAcompanhamentos());
+        }
+        async private void ChamadoButtonTapped(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ListaChamados());
         }
-        async void OnTappedProvidencia(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new ListaProvidencias());
-        }
-        async void OnTappedTarefa(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new ListaTarefas());
-        }
-        async void OnTappedTramite(object sender, EventArgs args)
+        async private void TramiteButtonTapped(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new ListaTramites());
         }
-
+        async private void TarefaButtonTapped(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaTarefas());
+        }
+        async private void ProvidenciaButtonTapped(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ListaProvidencias());
+        }
     }
 }
