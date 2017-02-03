@@ -25,10 +25,10 @@
                   <RowDefinition Height="Auto"></RowDefinition>
                   <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ContaId, StringFormat='Conta Id: {0}'}" FontAttributes="Bold" FontSize="Large"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="{Binding RazaoSocial, StringFormat='Razão Social: {0}'}" FontAttributes="Bold, Italic" FontSize="Medium"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ContaId, StringFormat='Conta: {0}'}" FontAttributes="Bold" FontSize="Large"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding NomeFantasia, StringFormat='Nome Fantasia: {0}'}" FontAttributes="Bold, Italic" FontSize="Medium"/>
                 <!--<Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource Ellevo.mobile.app.images.phone-512.png}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>-->
-                <Label Grid.Row="2"  Grid.Column="0" Text="{Binding NomeFantasia, StringFormat='Nome fantasia: {0}'}"  FontSize="Medium"/>
+                <Label Grid.Row="2"  Grid.Column="0" Text="{Binding RazaoSocial, StringFormat='Razão Social: {0}'}"  FontSize="Medium"/>
               </Grid>
             </StackLayout>
           </ViewCell>

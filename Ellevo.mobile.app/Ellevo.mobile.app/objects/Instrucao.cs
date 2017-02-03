@@ -25,5 +25,8 @@ namespace Ellevo.mobile.app
         public int OrigemNumero { get; set; }
 
         public int OrigemExpressao { get; set; }
+        public string TipoDescricao { get; set; }
+        public IQueryable<InstrucaoDestinatario> Destinatarios { get; set; }
+        public string Descricao { get; set; }
     }
 }

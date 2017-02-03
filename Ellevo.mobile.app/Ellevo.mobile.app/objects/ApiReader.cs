@@ -1,5 +1,4 @@
-﻿using Ellevo.mobile.app.objects;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,28 +7,13 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-using Xamarin.Forms;
-
-namespace Ellevo.mobile.app.pages
+namespace Ellevo.mobile.app.objects
 {
-    public partial class ListaChamados : ContentPage
+    public class ApiReader
     {
-        IEnumerable<Chamado> chamados;
-        public ListaChamados()
+        async public static Task<IEnumerable<T>> GetDataFromApi<T>(string endpoint)
         {
-            InitializeComponent();
-            SizeChanged += OnSizeChanged;
-            GetDataFromApi();
-        }
-        private void OnSizeChanged(object sender, EventArgs e)
-        {
-            this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
-
-        }
-        private async void GetDataFromApi()
-        {
-            string endpoint = Sessao.UrlBase;
-            endpoint += "/api/v1/mob/chamado";
+            endpoint = endpoint.Insert(0, Sessao.UrlBase);
 
             HttpClientHandler handler = new HttpClientHandler()
             {
@@ -49,14 +33,10 @@ namespace Ellevo.mobile.app.pages
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
-                    chamados = JsonConvert.DeserializeObject<IEnumerable<Chamado>>(result);
-
-                    listView.ItemsSource = chamados.OrderByDescending(x => x.ChamadoId);
+                    return JsonConvert.DeserializeObject<IEnumerable<T>>(result);
                 }
                 else
-                {
-                    chamados = null;
-                }
+                    return null;
             }
         }
     }

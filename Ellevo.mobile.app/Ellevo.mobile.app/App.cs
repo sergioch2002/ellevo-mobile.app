@@ -14,7 +14,10 @@ namespace Ellevo.mobile.app
         public App()
         {
             MobileCenter.Start(typeof(Analytics), typeof(Crashes));
-            MainPage = new NavigationPage(new StartPage());
+            NavigationPage navigationPage = new NavigationPage(new StartPage());
+            navigationPage.BarBackgroundColor = Color.FromHex("#2DBDB6");
+            navigationPage.BarTextColor = Color.White;
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()
