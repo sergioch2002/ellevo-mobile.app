@@ -12,5 +12,12 @@ namespace Ellevo.mobile.app
         public DateTime? Vencimento { get; set; }
         public int Status { get; set; }
         public int UsuarioResponsavelID { get; set; }
+        public string UsuarioResponsavel { get; set; }
+        public string Descricao { get; set; }
+        public string TipoDescricao { get; set; }
+        /// <summary>
+        /// Campo para indicar se a tarefa já foi lida
+        /// </summary>
+        public bool Lido { get; set; }
     }
 }

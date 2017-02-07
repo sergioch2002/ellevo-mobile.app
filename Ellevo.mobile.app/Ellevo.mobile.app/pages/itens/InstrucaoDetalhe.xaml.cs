@@ -13,7 +13,8 @@ namespace Ellevo.mobile.app.pages
 
             InitializeComponent();
             SizeChanged += OnSizeChanged;
-            GetData();
+            if(!string.IsNullOrEmpty(instrucaoId))
+                GetData();
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -21,9 +22,7 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var instrucoes = await ApiReader.GetDataFromApi<Instrucao>("/api/v1/mob/instrucao/" + _instrucaoId);
-            var enumerator = instrucoes.GetEnumerator();
-            Instrucao instrucao = enumerator.Current;
+            var instrucao = await ApiReader.GetDataFromApi<Instrucao>("/api/v1/mob/instrucao/" + _instrucaoId);
             if (instrucao != null)
             {
                     switch (instrucao.OrigemId)
@@ -49,11 +48,13 @@ namespace Ellevo.mobile.app.pages
                         default:
                             break;
                     }
-                lblOrigem.Text = instrucao.Origem;
-                lblId.Text = instrucao.InstrucaoId.ToString();
+                lblOrigem.Text = instrucao.Origem + ":";
+                lblId.Text = instrucao.OrigemNumero.ToString();
                 lblDataValor.Text = instrucao.DataCadastro.ToString();
                 lblDeValor.Text = instrucao.Remetente;
-                lblDescValor.Text = instrucao.Titulo;
+                foreach (var item in instrucao.Destinatarios)
+                    lblParaValor.Text += item.Nome + "; ";
+                lblDescValor.Text = instrucao.Descricao;
             }
             else
             {

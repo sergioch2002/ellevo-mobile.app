@@ -11,7 +11,7 @@ namespace Ellevo.mobile.app.objects
 {
     public class ApiReader
     {
-        async public static Task<IEnumerable<T>> GetDataFromApi<T>(string endpoint)
+        async public static Task<T> GetDataFromApi<T>(string endpoint)
         {
             endpoint = endpoint.Insert(0, Sessao.UrlBase);
 
@@ -33,10 +33,11 @@ namespace Ellevo.mobile.app.objects
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<IEnumerable<T>>(result);
+                    var ret = JsonConvert.DeserializeObject<T>(result);
+                    return ret;
                 }
                 else
-                    return null;
+                    return default (T);
             }
         }
     }

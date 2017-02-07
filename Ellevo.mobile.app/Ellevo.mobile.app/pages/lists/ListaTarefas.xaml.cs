@@ -27,7 +27,7 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var tarefas = await ApiReader.GetDataFromApi<Tarefa>("/api/v1/mob/tarefa");
+            var tarefas = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("/api/v1/mob/tarefa");
             listView.ItemsSource = tarefas.OrderByDescending(x => x.TarefaId);
         }
     }

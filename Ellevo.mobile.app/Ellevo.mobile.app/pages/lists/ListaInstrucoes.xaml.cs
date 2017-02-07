@@ -1,5 +1,6 @@
 ﻿using Ellevo.mobile.app.objects;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -20,7 +21,7 @@ namespace Ellevo.mobile.app
         }
         private async void GetData()
         {
-            var instrucoes = await ApiReader.GetDataFromApi<Instrucao>("/api/v1/mob/instrucao/naolidas");
+            var instrucoes = await ApiReader.GetDataFromApi<IEnumerable<Instrucao>>("/api/v1/mob/instrucao/naolidas");
             if (instrucoes != null)
             {
                 foreach (var item in instrucoes)

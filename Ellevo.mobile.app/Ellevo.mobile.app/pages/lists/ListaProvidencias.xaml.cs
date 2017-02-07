@@ -27,7 +27,7 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var providencias = await ApiReader.GetDataFromApi<Providencia>("/api/v1/mob/providencia");
+            var providencias = await ApiReader.GetDataFromApi<IEnumerable<Providencia>>("/api/v1/mob/providencia");
             listView.ItemsSource = providencias.OrderByDescending(x => x.ProvidenciaId);
         }
        

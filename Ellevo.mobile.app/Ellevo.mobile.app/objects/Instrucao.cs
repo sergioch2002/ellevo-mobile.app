@@ -10,8 +10,6 @@ namespace Ellevo.mobile.app
     {
         public int InstrucaoId { get; set; }
 
-        public string Titulo { get; set; }
-
         public string Remetente { get; set; }
 
         public bool? Lida { get; set; }
@@ -25,8 +23,11 @@ namespace Ellevo.mobile.app
         public int OrigemNumero { get; set; }
 
         public int OrigemExpressao { get; set; }
+
         public string TipoDescricao { get; set; }
-        public IQueryable<InstrucaoDestinatario> Destinatarios { get; set; }
+
+        public List<InstrucaoDestinatario> Destinatarios { get; set; }
+
         public string Descricao { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Ellevo.mobile.app.objects;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Xamarin.Forms;
@@ -21,7 +22,7 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var acompanhamentos = await ApiReader.GetDataFromApi<Conta>("/api/v1/mob/conta");
+            var acompanhamentos = await ApiReader.GetDataFromApi<IEnumerable<Conta>>("/api/v1/mob/conta");
             listView.ItemsSource = acompanhamentos.OrderByDescending(x => x.ContaId);
         }
     }

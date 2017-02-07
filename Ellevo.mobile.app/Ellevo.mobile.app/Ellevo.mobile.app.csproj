@@ -44,10 +44,12 @@
     <Compile Include="objects\Conta.cs" />
     <Compile Include="objects\Instrucao.cs" />
     <Compile Include="objects\InstrucaoDestinatario.cs" />
+    <Compile Include="objects\Motivo.cs" />
     <Compile Include="objects\Providencia.cs" />
+    <Compile Include="objects\Status.cs" />
     <Compile Include="objects\Tarefa.cs" />
     <Compile Include="objects\Tramite.cs" />
-    <Compile Include="pages\InstrucaoDetalhe.xaml.cs">
+    <Compile Include="pages\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\lists\ListaAcompanhamentos.xaml.cs">
@@ -83,9 +85,6 @@
     <Compile Include="objects\Sessao.cs" />
     <Compile Include="pages\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages\TotalsPageSquares.xaml.cs">
-      <DependentUpon>TotalsPageSquares.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\Springboard.xaml.cs">
       <DependentUpon>Springboard.xaml</DependentUpon>
@@ -152,12 +151,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\TotalsPageSquares.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="pages\lists\ListaInstrucoes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -212,7 +205,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\InstrucaoDetalhe.xaml">
+    <EmbeddedResource Include="pages\itens\InstrucaoDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
