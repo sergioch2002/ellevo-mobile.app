@@ -14,9 +14,11 @@ namespace Ellevo.mobile.app.pages
     {
         public AprovacoesInicial()
         {
-            this.Title = "Chamados";
+            this.Title = "Aprovações";
             this.Children.Add(new ListaAprovacoesChamados());
             this.Children.Add(new ListaAprovacoesTarefas());
+            this.BarBackgroundColor = Color.FromHex("#2DBDB6");
+            
         }
 
     }

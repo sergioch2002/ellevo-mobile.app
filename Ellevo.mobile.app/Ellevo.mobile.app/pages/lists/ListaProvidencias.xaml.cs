@@ -27,8 +27,21 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var providencias = await ApiReader.GetDataFromApi<IEnumerable<Providencia>>("/api/v1/mob/providencia");
-            listView.ItemsSource = providencias.OrderByDescending(x => x.ProvidenciaId);
+            var providencias = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("/api/v1/mob/tarefa/NaoLidos");
+            if(providencias.Any())
+                listView.ItemsSource = providencias.OrderByDescending(x => x.TarefaId);
+            else
+            {
+                Label lbl = new Label
+                {
+                    Text = "Não há itens para exibir",
+                    TextColor = Color.Black,
+                    FontSize = 20
+                };
+                this.Content = lbl;
+                this.Content.VerticalOptions = LayoutOptions.Center;
+                this.Content.HorizontalOptions = LayoutOptions.Center;
+            }
         }
        
     }

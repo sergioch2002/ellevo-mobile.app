@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,10 +56,8 @@ namespace Ellevo.mobile.app
                 listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
                 {
                     inst = (Instrucao)listView.SelectedItem;
-                    Navigation.InsertPageBefore(new pages.InstrucaoDetalhe(inst.InstrucaoId.ToString()), this);
-                    await Navigation.PopAsync();
+                    await Navigation.PushAsync(new InstrucaoDetalhe(inst.InstrucaoId.ToString()));
                 };
-                
             }
             else
             {

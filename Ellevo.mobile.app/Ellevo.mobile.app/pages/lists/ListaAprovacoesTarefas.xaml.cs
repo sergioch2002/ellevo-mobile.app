@@ -24,7 +24,7 @@ namespace Ellevo.mobile.app.pages.lists
         }
         private async void GetData()
         {
-            var chamados = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("api/v1/mob/tarefa/EmAprovacao");
+            var chamados = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("/api/v1/mob/tarefa/EmAprovacao");
             if (chamados != null)
                 listView.ItemsSource = chamados.OrderByDescending(x => x.TarefaId);
             else

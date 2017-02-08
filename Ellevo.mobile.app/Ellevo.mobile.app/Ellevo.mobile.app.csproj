@@ -52,14 +52,20 @@
     <Compile Include="pages\AprovacoesInicial.xaml.cs">
       <DependentUpon>AprovacoesInicial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\itens\ChamadoDetalhe.xaml.cs">
+      <DependentUpon>ChamadoDetalhe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\itens\ContaDetalhe.xaml.cs">
+      <DependentUpon>ContaDetalhe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pages\itens\TarefaDetalhe.xaml.cs">
+      <DependentUpon>TarefaDetalhe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\lists\ListaAcompanhamentos.xaml.cs">
       <DependentUpon>ListaAcompanhamentos.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages\lists\ListaAprovacoes.xaml.cs">
-      <DependentUpon>ListaAprovacoes.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\lists\ListaAprovacoesChamados.xaml.cs">
       <DependentUpon>ListaAprovacoesChamados.xaml</DependentUpon>
@@ -196,12 +202,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaAprovacoes.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="pages\Springboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -233,6 +233,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="pages\lists\ListaAprovacoesTarefas.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\itens\ChamadoDetalhe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\itens\TarefaDetalhe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\itens\ContaDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

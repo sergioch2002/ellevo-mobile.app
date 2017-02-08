@@ -1,44 +1,46 @@
 ﻿using Ellevo.mobile.app.objects;
-using Ellevo.mobile.app.pages.itens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace Ellevo.mobile.app.pages
+namespace Ellevo.mobile.app.pages.itens
 {
-    public partial class ListaAcompanhamentos : ContentPage
+    public partial class ContaDetalhe : ContentPage
     {
-        public ListaAcompanhamentos()
+        private string _contaId;
+        public ContaDetalhe(string contaId)
         {
+            this._contaId = contaId;
             InitializeComponent();
             SizeChanged += OnSizeChanged;
-            GetData();
+            if (!string.IsNullOrEmpty(contaId))
+                GetData();
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
             this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
-
         }
         private async void GetData()
         {
-            var acompanhamentos = await ApiReader.GetDataFromApi<IEnumerable<Conta>>("/api/v1/mob/conta");
-            if (acompanhamentos != null)
+            var conta = await ApiReader.GetDataFromApi<Conta>("/api/v1/mob/conta/" + _contaId);
+            if (conta != null)
             {
-                listView.ItemsSource = acompanhamentos.OrderByDescending(x => x.ContaId);
-                Conta conta = new Conta();
-                listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
-                {
-                    conta = (Conta)listView.SelectedItem;
-                    await Navigation.PushAsync(new ContaDetalhe(conta.ContaId.ToString()));
-                };
+                lblOrigem.Text = "Conta: ";
+                lblId.Text = conta.ContaId.ToString();
+                lblRazao.Text = "Razão Social: ";
+                lblRazaoValor.Text = conta.RazaoSocial;
+                lblFantasia.Text = "Nome Fantasia: ";
+                lblFantasiaValor.Text = conta.NomeFantasia;
             }
             else
             {
                 Label lbl = new Label
                 {
-                    Text = "Não há itens para exibir",
+                    Text = "Erro ao carregar a Conta",
                     TextColor = Color.Black,
                     FontSize = 20
                 };

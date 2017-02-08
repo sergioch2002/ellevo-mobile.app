@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ellevo.mobile.app.pages.lists.ListaAprovacoesTarefas"
   xmlns:local="clr-namespace:Ellevo.mobile.app;assembly=Ellevo.mobile.app"
-  Title="Aprovações de Tarefas"
+  Title="TAREFAS"
   BackgroundImage="fundosemlogo.png">
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
@@ -24,12 +24,12 @@
                   <RowDefinition Height="Auto"></RowDefinition>
                   <RowDefinition Height="Auto"></RowDefinition>
                   <RowDefinition Height="Auto"></RowDefinition>
+                  <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="{Binding TarefaId, StringFormat='Tarefa: {0}'}" FontAttributes="Bold" FontSize="Large"/>
-                <Label Grid.Row="1" Grid.Column="0" Text="{Binding NomeCliente, StringFormat='Cliente: {0}'}" FontAttributes="Bold, Italic" FontSize="Medium"/>
-                <!--<Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource Ellevo.mobile.app.images.phone-512.png}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>-->
-                <Label Grid.Row="1"  Grid.Column="1" Text="{Binding Vencimento, StringFormat='Vencimento: {0}'}" FontSize="Medium" LineBreakMode="TailTruncation"/>
-                <Label Grid.Row="2"  Grid.Column="0" Text="{Binding Titulo, StringFormat='Título: {0}'}"  FontSize="Medium"/>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding TarefaId, StringFormat='Tarefa: {0}'}" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding NomeCliente, StringFormat='Cliente: {0}'}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                <Label Grid.Row="2"  Grid.Column="0" Text="{Binding Vencimento, StringFormat='Vencimento: {0}'}" FontSize="14" LineBreakMode="TailTruncation" TextColor="Black"/>
+                <Label Grid.Row="3"  Grid.Column="0" Text="{Binding Titulo, StringFormat='Título: {0}'}" FontSize="14" TextColor="Black"/>
               </Grid>
             </StackLayout>
           </ViewCell>

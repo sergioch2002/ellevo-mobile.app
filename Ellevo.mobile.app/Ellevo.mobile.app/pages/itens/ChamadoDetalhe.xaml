@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ellevo.mobile.app.pages.itens.ChamadoDetalhe"
+             Title="Chamado"
+             BackgroundImage="fundosemlogo.png">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout>
+        <StackLayout.Children>
+          <ScrollView>
+            <Grid RowSpacing="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+
+              <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label Grid.Row="0" Grid.Column="1" x:Name="lblId" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label Grid.Row="1" Grid.Column="0" x:Name="lblData" Text="Data:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label Grid.Row="1" Grid.Column="1" x:Name="lblDataValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label  Grid.Row="2" Grid.Column="0" x:Name="lblDe" Text="De:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label  Grid.Row="2" Grid.Column="1" x:Name="lblDeValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label  Grid.Row="3" Grid.Column="0" x:Name="lblPara" Text="Para:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label  Grid.Row="3"  Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblParaValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label  Grid.Row="6" Grid.Column="0" x:Name="lblDescricao" Text="Descrição:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="lblDescValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+            </Grid>
+          </ScrollView>
+        </StackLayout.Children>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

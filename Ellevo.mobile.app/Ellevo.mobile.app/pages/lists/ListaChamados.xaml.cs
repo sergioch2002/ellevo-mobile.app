@@ -23,7 +23,20 @@ namespace Ellevo.mobile.app.pages
         private async void GetData()
         {
             var chamados = await ApiReader.GetDataFromApi<IEnumerable<Chamado>>("/api/v1/mob/chamado");
-            listView.ItemsSource = chamados.OrderByDescending(x => x.ChamadoId);
+            if(chamados != null)
+                listView.ItemsSource = chamados.OrderByDescending(x => x.ChamadoId);
+            else
+            {
+                Label lbl = new Label
+                {
+                    Text = "Não há itens para exibir",
+                    TextColor = Color.Black,
+                    FontSize = 20
+                };
+                this.Content = lbl;
+                this.Content.VerticalOptions = LayoutOptions.Center;
+                this.Content.HorizontalOptions = LayoutOptions.Center;
+            }
         }
     }
 }
