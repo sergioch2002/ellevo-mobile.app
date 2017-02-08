@@ -71,7 +71,7 @@ namespace Ellevo.mobile.app
         }
         async private void AprovacaoButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaAprovacoes());
+            await Navigation.PushAsync(new AprovacoesInicial());
         }
         async private void InstrucaoButtonTapped(object sender, EventArgs args)
         {

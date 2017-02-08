@@ -49,6 +49,9 @@
     <Compile Include="objects\Status.cs" />
     <Compile Include="objects\Tarefa.cs" />
     <Compile Include="objects\Tramite.cs" />
+    <Compile Include="pages\AprovacoesInicial.xaml.cs">
+      <DependentUpon>AprovacoesInicial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
     </Compile>
@@ -57,6 +60,12 @@
     </Compile>
     <Compile Include="pages\lists\ListaAprovacoes.xaml.cs">
       <DependentUpon>ListaAprovacoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\lists\ListaAprovacoesChamados.xaml.cs">
+      <DependentUpon>ListaAprovacoesChamados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\lists\ListaAprovacoesTarefas.xaml.cs">
+      <DependentUpon>ListaAprovacoesTarefas.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\lists\ListaChamados.xaml.cs">
       <DependentUpon>ListaChamados.xaml</DependentUpon>
@@ -206,6 +215,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="pages\itens\InstrucaoDetalhe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\AprovacoesInicial.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\lists\ListaAprovacoesChamados.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="pages\lists\ListaAprovacoesTarefas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

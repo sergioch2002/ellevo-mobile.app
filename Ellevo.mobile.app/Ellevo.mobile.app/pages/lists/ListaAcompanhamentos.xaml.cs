@@ -22,7 +22,7 @@ namespace Ellevo.mobile.app.pages
         }
         private async void GetData()
         {
-            var acompanhamentos = await ApiReader.GetDataFromApi<IEnumerable<Conta>>("/api/v1/mob/conta");
+            var acompanhamentos = await ApiReader.GetDataFromApi<IEnumerable<Conta>>("api/v1/mob/chamado/EmAprovacao");
             listView.ItemsSource = acompanhamentos.OrderByDescending(x => x.ContaId);
         }
     }
