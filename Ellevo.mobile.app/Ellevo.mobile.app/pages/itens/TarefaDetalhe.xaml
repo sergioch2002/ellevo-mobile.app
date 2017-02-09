@@ -28,29 +28,35 @@
                 <RowDefinition Height="*" />
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
               </Grid.ColumnDefinitions>
 
-              <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+              <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" Text="Tarefa:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
               <Label Grid.Row="0" Grid.Column="1" x:Name="lblId" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
 
-              <Label Grid.Row="1" Grid.Column="0" x:Name="lblData" Text="Data:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+              <Label Grid.Row="1" Grid.Column="0" x:Name="lblCliente" Text="Cliente:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
-              <Label Grid.Row="1" Grid.Column="1" x:Name="lblDataValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+              <Label Grid.Row="1" Grid.Column="1" x:Name="lblClienteValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
 
-              <Label  Grid.Row="2" Grid.Column="0" x:Name="lblDe" Text="De:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+              <Label  Grid.Row="2" Grid.Column="0" x:Name="lblDe" Text="Responsável:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
               <Label  Grid.Row="2" Grid.Column="1" x:Name="lblDeValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
 
-              <Label  Grid.Row="3" Grid.Column="0" x:Name="lblPara" Text="Para:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+              <Label  Grid.Row="3" Grid.Column="0" x:Name="lblTitulo" Text="Título:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
-              <Label  Grid.Row="3"  Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblParaValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+              <Label  Grid.Row="3"  Grid.Column="1" x:Name="lblTituloValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
 
-              <Label  Grid.Row="6" Grid.Column="0" x:Name="lblDescricao" Text="Descrição:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+              <Label  Grid.Row="4" Grid.Column="0" x:Name="lblVencimento" Text="Vencimento:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
 
-              <Label  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="lblDescValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+              <Label  Grid.Row="4"  Grid.Column="1" x:Name="lblVencimentoValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label  Grid.Row="5" Grid.Column="0" x:Name="lblStatus" Text="Status:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
+
+              <Label  Grid.Row="5"  Grid.Column="1" x:Name="lblStatusValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
+
+              <Label  Grid.Row="6" Grid.Column="0" x:Name="lblDescValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
 
             </Grid>
           </ScrollView>

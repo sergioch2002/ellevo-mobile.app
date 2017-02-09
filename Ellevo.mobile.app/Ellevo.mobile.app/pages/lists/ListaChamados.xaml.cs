@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.pages.itens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,15 @@ namespace Ellevo.mobile.app.pages
         {
             var chamados = await ApiReader.GetDataFromApi<IEnumerable<Chamado>>("/api/v1/mob/chamado");
             if(chamados != null)
+            {
                 listView.ItemsSource = chamados.OrderByDescending(x => x.ChamadoId);
+                Chamado chamado = new app.Chamado();
+                listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
+                {
+                    chamado = (Chamado)listView.SelectedItem;
+                    await Navigation.PushAsync(new ChamadoDetalhe(chamado.ChamadoId.ToString()));
+                };
+            }
             else
             {
                 Label lbl = new Label

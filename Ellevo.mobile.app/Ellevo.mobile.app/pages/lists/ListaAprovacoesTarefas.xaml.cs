@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.pages.itens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,17 @@ namespace Ellevo.mobile.app.pages.lists
         }
         private async void GetData()
         {
-            var chamados = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("/api/v1/mob/tarefa/EmAprovacao");
-            if (chamados != null)
-                listView.ItemsSource = chamados.OrderByDescending(x => x.TarefaId);
+            var tarefas = await ApiReader.GetDataFromApi<IEnumerable<Tarefa>>("/api/v1/mob/tarefa/EmAprovacao");
+            if (tarefas != null)
+            {
+                listView.ItemsSource = tarefas.OrderByDescending(x => x.TarefaId);
+                Tarefa tarefa = new app.Tarefa();
+                listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
+                {
+                    tarefa = (Tarefa)listView.SelectedItem;
+                    await Navigation.PushAsync(new TarefaDetalhe(tarefa.TarefaId.ToString()));
+                };
+            }
             else
             {
                 Label lbl = new Label
