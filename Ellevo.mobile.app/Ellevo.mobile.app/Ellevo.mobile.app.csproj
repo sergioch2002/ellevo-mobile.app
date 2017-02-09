@@ -37,74 +37,74 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="ImageResourceExtension.cs" />
-    <Compile Include="objects\Acompanhamento.cs" />
-    <Compile Include="objects\ApiReader.cs" />
-    <Compile Include="objects\Atividade.cs" />
-    <Compile Include="objects\Chamado.cs" />
-    <Compile Include="objects\Conta.cs" />
-    <Compile Include="objects\Instrucao.cs" />
-    <Compile Include="objects\InstrucaoDestinatario.cs" />
-    <Compile Include="objects\Motivo.cs" />
-    <Compile Include="objects\Providencia.cs" />
-    <Compile Include="objects\Status.cs" />
-    <Compile Include="objects\Tarefa.cs" />
-    <Compile Include="objects\Tramite.cs" />
-    <Compile Include="pages\AprovacoesInicial.xaml.cs">
+    <Compile Include="modelos\Acompanhamento.cs" />
+    <Compile Include="modelos\ApiReader.cs" />
+    <Compile Include="modelos\Atividade.cs" />
+    <Compile Include="modelos\Chamado.cs" />
+    <Compile Include="modelos\Conta.cs" />
+    <Compile Include="modelos\Instrucao.cs" />
+    <Compile Include="modelos\InstrucaoDestinatario.cs" />
+    <Compile Include="modelos\Motivo.cs" />
+    <Compile Include="modelos\Providencia.cs" />
+    <Compile Include="modelos\Status.cs" />
+    <Compile Include="modelos\Tarefa.cs" />
+    <Compile Include="modelos\Tramite.cs" />
+    <Compile Include="paginas\AprovacoesInicial.xaml.cs">
       <DependentUpon>AprovacoesInicial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\itens\ChamadoDetalhe.xaml.cs">
+    <Compile Include="paginas\itens\ChamadoDetalhe.xaml.cs">
       <DependentUpon>ChamadoDetalhe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\itens\ContaDetalhe.xaml.cs">
+    <Compile Include="paginas\itens\ContaDetalhe.xaml.cs">
       <DependentUpon>ContaDetalhe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\itens\InstrucaoDetalhe.xaml.cs">
+    <Compile Include="paginas\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\itens\TarefaDetalhe.xaml.cs">
+    <Compile Include="paginas\itens\TarefaDetalhe.xaml.cs">
       <DependentUpon>TarefaDetalhe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaAcompanhamentos.xaml.cs">
+    <Compile Include="paginas\listas\ListaAcompanhamentos.xaml.cs">
       <DependentUpon>ListaAcompanhamentos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaAprovacoesChamados.xaml.cs">
+    <Compile Include="paginas\listas\ListaAprovacoesChamados.xaml.cs">
       <DependentUpon>ListaAprovacoesChamados.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaAprovacoesTarefas.xaml.cs">
+    <Compile Include="paginas\listas\ListaAprovacoesTarefas.xaml.cs">
       <DependentUpon>ListaAprovacoesTarefas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaChamados.xaml.cs">
+    <Compile Include="paginas\listas\ListaChamados.xaml.cs">
       <DependentUpon>ListaChamados.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaInstrucoes.xaml.cs">
+    <Compile Include="paginas\listas\ListaInstrucoes.xaml.cs">
       <DependentUpon>ListaInstrucoes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaProvidencias.xaml.cs">
+    <Compile Include="paginas\listas\ListaProvidencias.xaml.cs">
       <DependentUpon>ListaProvidencias.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaTarefas.xaml.cs">
+    <Compile Include="paginas\listas\ListaTarefas.xaml.cs">
       <DependentUpon>ListaTarefas.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\lists\ListaTramites.xaml.cs">
+    <Compile Include="paginas\listas\ListaTramites.xaml.cs">
       <DependentUpon>ListaTramites.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\LoginPage.xaml.cs">
+    <Compile Include="paginas\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="objects\Configuracoes.cs" />
-    <Compile Include="objects\DominioMobile.cs" />
-    <Compile Include="objects\IdiomaMobile.cs" />
-    <Compile Include="objects\TelaInicial.cs" />
-    <Compile Include="objects\Token.cs" />
+    <Compile Include="modelos\Configuracoes.cs" />
+    <Compile Include="modelos\DominioMobile.cs" />
+    <Compile Include="modelos\IdiomaMobile.cs" />
+    <Compile Include="modelos\TelaInicial.cs" />
+    <Compile Include="modelos\Token.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="objects\Sessao.cs" />
-    <Compile Include="pages\StartPage.xaml.cs">
+    <Compile Include="modelos\Sessao.cs" />
+    <Compile Include="paginas\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\Springboard.xaml.cs">
+    <Compile Include="paginas\Springboard.xaml.cs">
       <DependentUpon>Springboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\SwitchboardButton.xaml.cs">
+    <Compile Include="controles\SwitchboardButton.xaml.cs">
       <DependentUpon>SwitchboardButton.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -154,103 +154,103 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\StartPage.xaml">
+    <EmbeddedResource Include="paginas\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\LoginPage.xaml">
+    <EmbeddedResource Include="paginas\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaInstrucoes.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaInstrucoes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaAcompanhamentos.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaAcompanhamentos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaChamados.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaChamados.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaTramites.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaTramites.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaTarefas.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaTarefas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaProvidencias.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaProvidencias.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\Springboard.xaml">
+    <EmbeddedResource Include="paginas\Springboard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="controls\SwitchboardButton.xaml">
+    <EmbeddedResource Include="controles\SwitchboardButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\itens\InstrucaoDetalhe.xaml">
+    <EmbeddedResource Include="paginas\itens\InstrucaoDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\AprovacoesInicial.xaml">
+    <EmbeddedResource Include="paginas\AprovacoesInicial.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaAprovacoesChamados.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaAprovacoesChamados.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\lists\ListaAprovacoesTarefas.xaml">
+    <EmbeddedResource Include="paginas\listas\ListaAprovacoesTarefas.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\itens\ChamadoDetalhe.xaml">
+    <EmbeddedResource Include="paginas\itens\ChamadoDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\itens\TarefaDetalhe.xaml">
+    <EmbeddedResource Include="paginas\itens\TarefaDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pages\itens\ContaDetalhe.xaml">
+    <EmbeddedResource Include="paginas\itens\ContaDetalhe.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -11,8 +11,9 @@
         <StackLayout.Children>
           <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
             <Image Source="logomobile150x150.png"
-                   HeightRequest="150"
-                   WidthRequest="150"/>
+                   HeightRequest="100"
+                   WidthRequest="100"/>
+            <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"/>
           </StackLayout>
           <!--Container do login-->
           <StackLayout Padding="0, 50, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
@@ -31,6 +32,7 @@
             <!--Caixa de login-->
             <ScrollView>
               <StackLayout x:Name="boxLogin" VerticalOptions="StartAndExpand" Padding="0, 20, 0, 0" >
+                
                 <Label x:Name="lblDominio" Text="" HorizontalTextAlignment="Start"
                                  VerticalTextAlignment="Start"
                                  FontAttributes="Bold"

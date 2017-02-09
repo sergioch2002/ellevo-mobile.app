@@ -11,9 +11,9 @@
         <StackLayout.Children>
           <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
             <Image Source="logomobile150x150.png"
-                   HeightRequest="150"
-                   WidthRequest="150"/>
-
+                   HeightRequest="130"
+                   WidthRequest="130"/>
+            <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"/>
           </StackLayout>
 
           <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 50, 0, 0">

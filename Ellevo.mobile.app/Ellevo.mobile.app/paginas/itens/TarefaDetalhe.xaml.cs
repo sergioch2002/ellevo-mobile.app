@@ -16,6 +16,7 @@ namespace Ellevo.mobile.app.pages.itens
         {
             this._tarefaId = tarefaId;
             InitializeComponent();
+            waitActivityIndicator.IsRunning = true;
             SizeChanged += OnSizeChanged;
             if (!string.IsNullOrEmpty(tarefaId))
                 GetData();
@@ -26,7 +27,9 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void GetData()
         {
+            
             var tarefa = await ApiReader.GetDataFromApi<Tarefa>("/api/v1/mob/tarefa/" + _tarefaId);
+            waitActivityIndicator.IsRunning = false;
             if (tarefa != null)
             {
                 lblId.Text = tarefa.TarefaId.ToString();

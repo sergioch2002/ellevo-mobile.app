@@ -32,7 +32,7 @@ namespace Ellevo.mobile.app
         {
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
-
+            waitActivityIndicator.IsRunning = true;
             endpoint += "/api/v1/mob/inicio/resumo";
             HttpClientHandler handler = new HttpClientHandler()
             {
@@ -49,7 +49,7 @@ namespace Ellevo.mobile.app
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Sessao.Token.Token_type, Sessao.Token.Access_token);
 
                 var response = await client.GetAsync(endpoint);
-
+                waitActivityIndicator.IsRunning = false;
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
@@ -91,7 +91,9 @@ namespace Ellevo.mobile.app
         }
         async private void TarefaButtonTapped(object sender, EventArgs args)
         {
+            
             await Navigation.PushAsync(new ListaTarefas());
+            waitActivityIndicator.IsRunning = false;
         }
         async private void ProvidenciaButtonTapped(object sender, EventArgs args)
         {

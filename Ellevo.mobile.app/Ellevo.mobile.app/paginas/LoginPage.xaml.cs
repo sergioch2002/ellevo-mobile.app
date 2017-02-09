@@ -35,6 +35,7 @@ namespace Ellevo.mobile.app
 
             boxLogin.Children.Add(picker);
 
+            btnEntrar.IsEnabled = false;
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -48,6 +49,7 @@ namespace Ellevo.mobile.app
         }
         private void OnPassEntryCompleted(object sender, EventArgs args)
         {
+            btnEntrar.IsEnabled = true;
             picker.Focus();
         }
         private void SetViews()
@@ -63,6 +65,7 @@ namespace Ellevo.mobile.app
                                   easing: Easing.SpringOut);
             animation.Commit(btnEntrar, "Loop", length: 400);
 
+            
             if (!string.IsNullOrEmpty(txtUsuario.Text) && !string.IsNullOrEmpty(txtSenha.Text))
             {
                 GetToken(Sessao.UrlBase);
@@ -73,7 +76,8 @@ namespace Ellevo.mobile.app
 
         public async void GetToken(string endpoint)
         {
-            //endpoint = "http://desenv.0800net.com.br/mobile";
+            waitActivityIndicator.IsRunning = true;
+            
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
 
@@ -83,7 +87,6 @@ namespace Ellevo.mobile.app
                 PreAuthenticate = true,
                 UseDefaultCredentials = true
             };
-            string reasonPhrase = "";
             using (var client = new HttpClient(handler))
             {
                 client.BaseAddress = new Uri(endpoint);
@@ -108,14 +111,14 @@ namespace Ellevo.mobile.app
                 {
                     var result = await response.Content.ReadAsStringAsync();
                     var conf = JsonConvert.DeserializeObject<Token>(result);
-
+                    waitActivityIndicator.IsRunning = false;
                     Sessao.Token = conf;
 
                     await Navigation.PushAsync(new Springboard());
                 }
                 else
                 {
-                    reasonPhrase = response.ReasonPhrase;
+                    await DisplayAlert("Atenção", "Erro ao efetuar Login. Tente novamente.", "Sair");
                 }
             }
         }

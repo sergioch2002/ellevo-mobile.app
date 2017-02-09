@@ -20,7 +20,8 @@
     <BoxView Grid.Row="0"/>
     <BoxView Grid.Row="1"/>
     <BoxView Grid.Row="2"/>
-    <Image Grid.Row="0" Source="logomobile150x150.png" VerticalOptions="Start" HeightRequest="50" WidthRequest="50"/>
+    <Image Grid.Row="0" Source="logomobile150x150.png" VerticalOptions="Start" HeightRequest="80" WidthRequest="80"/>
+    <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"/>
     <!--  inner grid for button layouts  -->
     <Grid Grid.Row="1" ColumnSpacing="30" HorizontalOptions="Center"
           RowSpacing="30" VerticalOptions="Center">

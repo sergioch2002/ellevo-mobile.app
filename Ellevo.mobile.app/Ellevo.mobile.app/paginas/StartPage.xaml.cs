@@ -19,13 +19,10 @@ namespace Ellevo.mobile.app
         {
             InitializeComponent();
             SizeChanged += OnSizeChanged;
-
         }
-
         private void OnSizeChanged(object sender, EventArgs e)
         {
             this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
-
         }
 
         private void OnConfirmClicked(object sender, EventArgs args)
@@ -40,11 +37,13 @@ namespace Ellevo.mobile.app
                 return;
 
             if (ValidateUrl(URL.Text.TrimStart().TrimEnd().Trim()))
-            //if (true)
             {
                 Sessao.UrlBase = URL.Text;
-                //Sessao.UrlBase = "http://desenv.0800net.com.br/mobile";
                 GetConfiguration(URL.Text.TrimStart().TrimEnd().Trim());
+            }
+            else
+            {
+                DisplayAlert("Atenção", "URL inválida.", "Fechar");
             }
         }
 
@@ -55,10 +54,12 @@ namespace Ellevo.mobile.app
             if (ValidateUrl(entry.Text.TrimStart().TrimEnd().Trim()))
             {
                 Sessao.UrlBase = URL.Text;
-                //Sessao.UrlBase = "http://desenv.0800net.com.br/mobile";
                 GetConfiguration(URL.Text);
             }
-
+            else
+            {
+                DisplayAlert("Atenção", "URL inválida.", "Fechar");
+            }
         }
 
         private bool ValidateUrl(string url)
@@ -80,18 +81,15 @@ namespace Ellevo.mobile.app
 
         public async void GetConfiguration(string endpoint)
         {
-            //endpoint = "http://desenv.0800net.com.br/mobile";
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
-
+            waitActivityIndicator.IsRunning = true;
             endpoint += "/api/v1/mob/configuracao";
             HttpClientHandler handler = new HttpClientHandler()
             {
                 PreAuthenticate = true,
                 UseDefaultCredentials = true
             };
-
-
             string reasonPhrase = "";
             using (var client = new HttpClient(handler))
             {
@@ -101,7 +99,7 @@ namespace Ellevo.mobile.app
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("amx", "4d53bce03ec34c0a911182d4c228ee6c:A93reRTUJHsCuQSHR+L3GxqOJyDmQpCgps102ciuabc=");
 
                 var response = await client.GetAsync(endpoint);
-
+                waitActivityIndicator.IsRunning = false;
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
