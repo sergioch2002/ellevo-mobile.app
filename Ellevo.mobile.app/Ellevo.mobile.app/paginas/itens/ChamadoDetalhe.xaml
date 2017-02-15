@@ -14,48 +14,82 @@
           <ScrollView>
             <Grid RowSpacing="0">
               <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
               </Grid.ColumnDefinitions>
-
-              <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" Text="Chamado:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label Grid.Row="0" Grid.Column="1" x:Name="lblId" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label Grid.Row="1" Grid.Column="0" x:Name="lblCliente" Text="Cliente:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label Grid.Row="1" Grid.Column="1" x:Name="lblClienteValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label  Grid.Row="2" Grid.Column="0" x:Name="lblDe" Text="Responsável:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label  Grid.Row="2" Grid.Column="1" x:Name="lblDeValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label  Grid.Row="3" Grid.Column="0" x:Name="lblTitulo" Text="Título:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label  Grid.Row="3"  Grid.Column="1" x:Name="lblTituloValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label  Grid.Row="4" Grid.Column="0" x:Name="lblVencimento" Text="Vencimento:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label  Grid.Row="4"  Grid.Column="1" x:Name="lblVencimentoValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label  Grid.Row="5" Grid.Column="0" x:Name="lblStatus" Text="Status:" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
-              <Label  Grid.Row="5"  Grid.Column="1" x:Name="lblStatusValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
-              <Label  Grid.Row="6" Grid.Column="0" x:Name="lblDescValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
+              <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblTitulo" Text="Título" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblTituloValor" HorizontalTextAlignment="Start" FontSize="Large" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+              <Label Grid.Row="2" Grid.Column="0" x:Name="lblStatus" Text="Status" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
+              <Label Grid.Row="3" Grid.Column="0" x:Name="lblStatusValor" TextColor="Black" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" />
+              <Label Grid.Row="2" Grid.Column="1" x:Name="lblVencimento" Text="Vencimento" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+              <Label Grid.Row="3" Grid.Column="1" x:Name="lblVencimentoValor" TextColor="Black" VerticalTextAlignment="Start" LineBreakMode="TailTruncation"/>
+              <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblCliente" Text="Cliente" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblClienteValor" HorizontalTextAlignment="Start" TextColor="Black" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+              <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblDe" Text="Responsável" HorizontalTextAlignment="Start"  VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Label Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblDeValor" HorizontalTextAlignment="Start" TextColor="Black" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+              <Label Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblDesc" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblDescValor" HorizontalTextAlignment="Start" FontSize="Medium" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+              <Grid Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="2*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1"
+                        x:Name="btnTramite"
+                        Text="Trâmite"
+                        BackgroundColor="#2DBDB6"
+                        TextColor="White"
+                        BorderWidth="0"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Clicked="OnTramClicked"/>
+                <Button Grid.Column="2"
+                        x:Name="btnNovaInstr"
+                        Text="Instrução"
+                        BackgroundColor="#2DBDB6"
+                        TextColor="White"
+                        BorderWidth="0"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Clicked="OnInstrClicked"/>
+              </Grid>
+              <!--Faixa com dados do tramite/providenca-->
+              <StackLayout Padding="2" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Label x:Name="lblProvId" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold"/>
+                <Label x:Name="lblProvData" HorizontalTextAlignment="Start" FontSize="Small"/>
+              </StackLayout>
             </Grid>
           </ScrollView>
         </StackLayout.Children>
+        <!--Região do tramite/providencia-->
+        <StackLayout VerticalOptions="End">
+          <StackLayout Padding="1" >
+            <Editor x:Name="textEditor" BackgroundColor="White" TextColor="Black" MinimumHeightRequest="60" HeightRequest="180"/>
+          </StackLayout>
+          <!--Regição da navegação do tramite/providencia-->
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="btnBack" BackgroundColor="#2DBDB6"  HorizontalOptions="Start" Clicked="OnBackClicked"/>
+            <Entry x:Name="pgGo" PlaceholderColor="Red" HorizontalOptions="Center" Completed="OnPageGo"/>
+            <Button x:Name="btnNext" BackgroundColor="#2DBDB6" Clicked="OnNextClicked"/>
+            <Label x:Name="lblPages" HorizontalOptions="EndAndExpand" VerticalOptions="End"/>
+          </StackLayout>
+        </StackLayout>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

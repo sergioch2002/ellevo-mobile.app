@@ -14,30 +14,31 @@
           <ScrollView>
             <Grid RowSpacing="0">
               <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
               </Grid.RowDefinitions>
               <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
               </Grid.ColumnDefinitions>
-
               <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
               <Label Grid.Row="0" Grid.Column="1" x:Name="lblId" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
               <Label Grid.Row="1" Grid.Column="0" x:Name="lblRazao" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
               <Label Grid.Row="1" Grid.Column="1" x:Name="lblRazaoValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
               <Label  Grid.Row="2" Grid.Column="0" x:Name="lblFantasia" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
               <Label  Grid.Row="2" Grid.Column="1" x:Name="lblFantasiaValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
+              <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnNovaInstr"
+                      Text="Nova Instrução"
+                      BackgroundColor="#2DBDB6"
+                      TextColor="White"
+                      BorderWidth="0"
+                      BorderColor="Transparent"
+                      Clicked="OnInstrClicked"
+                      HorizontalOptions="Center"/>
             </Grid>
           </ScrollView>
         </StackLayout.Children>

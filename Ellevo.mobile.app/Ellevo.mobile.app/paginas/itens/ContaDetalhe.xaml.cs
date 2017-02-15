@@ -19,6 +19,11 @@ namespace Ellevo.mobile.app.pages.itens
             SizeChanged += OnSizeChanged;
             if (!string.IsNullOrEmpty(contaId))
                 GetData();
+            this.Title += " " + contaId;
+        }
+        private async void OnInstrClicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Clicado!", "Nova Instrução clicado.", "Fechar");
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {

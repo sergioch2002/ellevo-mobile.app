@@ -32,10 +32,7 @@ namespace Ellevo.mobile.app
             {
                 picker.Items.Add(dominio.Nome);
             }
-
             boxLogin.Children.Add(picker);
-
-            btnEntrar.IsEnabled = false;
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -49,7 +46,6 @@ namespace Ellevo.mobile.app
         }
         private void OnPassEntryCompleted(object sender, EventArgs args)
         {
-            btnEntrar.IsEnabled = true;
             picker.Focus();
         }
         private void SetViews()
@@ -59,6 +55,9 @@ namespace Ellevo.mobile.app
 
         private void OnEnterClicked(object sender, EventArgs args)
         {
+            txtUsuario.Text = "davila0800net";
+            txtSenha.Text = "123456";
+
             var animation = new Animation(callback: d => btnEntrar.Rotation = d,
                                   start: btnEntrar.Rotation,
                                   end: btnEntrar.Rotation + 360,
@@ -93,14 +92,15 @@ namespace Ellevo.mobile.app
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                
                 var postData = new List<KeyValuePair<string, string>>();
                 postData.Add(new KeyValuePair<string, string>("username", txtUsuario.Text));
                 //postData.Add(new KeyValuePair<string, string>("username", "davila0800net"));
                 postData.Add(new KeyValuePair<string, string>("password", txtSenha.Text));
                 //postData.Add(new KeyValuePair<string, string>("password", "123456"));
                 postData.Add(new KeyValuePair<string, string>("grant_type", "password"));
-                postData.Add(new KeyValuePair<string, string>("dominio", configuracoes.ListaDominios[picker.SelectedIndex].Id.ToString()));
-                //postData.Add(new KeyValuePair<string, string>("dominio", "0"));
+                //postData.Add(new KeyValuePair<string, string>("dominio", configuracoes.ListaDominios[picker.SelectedIndex].Id.ToString()));
+                postData.Add(new KeyValuePair<string, string>("dominio", "0"));
                 postData.Add(new KeyValuePair<string, string>("client_id", "123"));
                 
                 HttpContent content = new FormUrlEncodedContent(postData);

@@ -14,7 +14,7 @@
         <DataTemplate>
           <ViewCell>
             <StackLayout Padding="0,0,0,10">
-              <Grid Padding="5" VerticalOptions="Fill">
+              <Grid Padding="5">
                 <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="Auto"/>
                   <ColumnDefinition Width="Auto"/>

@@ -17,8 +17,8 @@ namespace Ellevo.mobile.app
         public string Descricao { get; set; }
         public string TipoDescricao { get; set; }
         public bool TramiteSolucao { get; set; }
-        public IEnumerable<Status> Status { get; set; }
-        public IEnumerable<Motivo> Motivos { get; set; }
-        public IEnumerable<Atividade> Atividades { get; set; }
+        public List<Status> Status { get; set; }
+        public List<Motivo> Motivos { get; set; }
+        public List<Atividade> Atividades { get; set; }
     }
 }
