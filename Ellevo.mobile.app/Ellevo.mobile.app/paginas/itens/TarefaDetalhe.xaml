@@ -72,13 +72,18 @@
               <Label x:Name="lblProvData" HorizontalTextAlignment="Start" FontSize="Small"/>
                 </StackLayout>
             </Grid>
-
           </ScrollView>
-
         </StackLayout.Children>
         <StackLayout BackgroundColor="White" VerticalOptions="End">
           <StackLayout BackgroundColor="Black" Padding="1" >
             <Editor x:Name="textEditor" BackgroundColor="White" TextColor="Black" MinimumHeightRequest="60" HeightRequest="180"/>
+          </StackLayout>
+          <!--Regição da navegação do tramite/providencia-->
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="btnBack" BackgroundColor="#2DBDB6"  HorizontalOptions="Start" Clicked="OnBackClicked"/>
+            <Entry x:Name="pgGo" PlaceholderColor="Red" HorizontalOptions="Center" Completed="OnPageGo"/>
+            <Button x:Name="btnNext" BackgroundColor="#2DBDB6" Clicked="OnNextClicked"/>
+            <Label x:Name="lblPages" HorizontalOptions="EndAndExpand" VerticalOptions="End"/>
           </StackLayout>
         </StackLayout>
       </StackLayout>

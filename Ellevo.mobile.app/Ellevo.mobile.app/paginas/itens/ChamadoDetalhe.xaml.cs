@@ -14,6 +14,7 @@ namespace Ellevo.mobile.app.pages.itens
         private string _chamadoId;
         private int _currentTramite;
         private int _numTramites;
+        private bool _isHtml;
         public ChamadoDetalhe(string chamadoId)
         {
             this._chamadoId = chamadoId;
@@ -36,6 +37,9 @@ namespace Ellevo.mobile.app.pages.itens
             btnNext.Text = "\u003e\u003e";
             btnBack.Text = "\u003c\u003c";
             lblPages.Text = "Page\n10/10";
+            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await DisplayAlert("Clicado!", "Adicionar clicado.", "Fechar"); }));
+            this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
+            this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
         }
         private async void OnTramClicked(object sender, EventArgs e)
         {
@@ -87,7 +91,7 @@ namespace Ellevo.mobile.app.pages.itens
                 lblVencimentoValor.Text = chamado.Vencimento.ToString();
                 lblStatusValor.Text = chamado.Status  == 1 ? "Iniciado" : "Não Iniciado";
                 lblDescValor.Text = chamado.Descricao;
-
+                
                 if (!string.IsNullOrEmpty(lblVencimentoValor.Text))
                 {
                     lblVencimento.IsVisible = true;
@@ -132,9 +136,22 @@ namespace Ellevo.mobile.app.pages.itens
             lblProvId.Text = "Trâmite " + qtdTramites.ToString();
             pgGo.Placeholder = this._currentTramite.ToString();
             var tramite = await ApiReader.GetDataFromApi<Tramite>("/api/v1/mob/tramite/chamado/" + _chamadoId + "/tramite/" + this._currentTramite.ToString());
+            this._isHtml = tramite.TipoDescricao.ToLower().Contains(".htm") ? true : false;
             lblProvData.Text = tramite.Data.Value.ToString();
-            textEditor.Text = tramite.Descricao;
             lblPages.Text = this._currentTramite.ToString() + "-" + this._numTramites.ToString();
+            if(this._isHtml)
+            {
+                var browser = new WebView
+                {
+                    HeightRequest = 180
+                };
+                var htmlSource = new HtmlWebViewSource
+                {
+                    Html = tramite.Descricao.Replace(@"\", string.Empty)
+            };
+                browser.Source = htmlSource;
+            }
+            textEditor.Text = tramite.Descricao;
         }
     }
 }
