@@ -56,7 +56,7 @@ namespace Ellevo.mobile.app
         private void OnEnterClicked(object sender, EventArgs args)
         {
             txtUsuario.Text = "davila0800net";
-            txtSenha.Text = "123456";
+            txtSenha.Text = "654321";
 
             var animation = new Animation(callback: d => btnEntrar.Rotation = d,
                                   start: btnEntrar.Rotation,

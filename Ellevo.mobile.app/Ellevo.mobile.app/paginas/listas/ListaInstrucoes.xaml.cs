@@ -1,5 +1,6 @@
 ﻿using Ellevo.mobile.app.objects;
 using Ellevo.mobile.app.pages;
+using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Ellevo.mobile.app
             InitializeComponent();
             SizeChanged += OnSizeChanged;
             GetData();
+            
+            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaIntrucao()); ; }));
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -23,6 +26,7 @@ namespace Ellevo.mobile.app
         private async void GetData()
         {
             var instrucoes = await ApiReader.GetDataFromApi<IEnumerable<Instrucao>>("/api/v1/mob/instrucao/naolidas");
+            
             if (instrucoes != null)
             {
                 foreach (var item in instrucoes)

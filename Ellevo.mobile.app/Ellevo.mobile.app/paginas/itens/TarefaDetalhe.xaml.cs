@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnProvClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado!", "Nova Providência clicado.", "Fechar");
+            await Navigation.PushAsync(new NovaProvidencia(_tarefaId));
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
@@ -150,7 +151,7 @@ namespace Ellevo.mobile.app.pages.itens
                 };
                 var htmlSource = new HtmlWebViewSource
                 {
-                    Html = providencia.FirstOrDefault().Descricao.Replace(@"\", string.Empty)
+                    Html = "<html><body>" + providencia.FirstOrDefault().Descricao.Replace(@"\", string.Empty) + "</body></html>"
                 };
                 browser.Source = htmlSource;
             }

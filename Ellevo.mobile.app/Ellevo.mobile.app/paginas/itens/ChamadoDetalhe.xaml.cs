@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnTramClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado!", "Novo Tramite clicado.", "Fechar");
+            await Navigation.PushAsync(new NovoTramite(_chamadoId));
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {

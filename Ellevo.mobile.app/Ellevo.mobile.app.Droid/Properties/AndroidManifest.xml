@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="15" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="EllevoAPP.EllevoAPP" android:versionCode="01" android:versionName="Ana">
+	<uses-sdk />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<application android:label="Ellevo.mobile.app.Droid"></application>
+	<application android:label="Ellevo APP" android:icon="@drawable/logomobile150x150"></application>
 </manifest>

@@ -10,6 +10,8 @@ namespace Ellevo.mobile.app
     {
         public int InstrucaoId { get; set; }
 
+        public string Titulo { get; set; }
+
         public string Remetente { get; set; }
 
         public bool? Lida { get; set; }

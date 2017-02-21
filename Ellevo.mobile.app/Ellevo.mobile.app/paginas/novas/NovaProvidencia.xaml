@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ellevo.mobile.app.paginas.novas.NovaProvidencia">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <ScrollView>
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+        <Editor Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="3" x:Name="lblDescValor" HeightRequest="200" WidthRequest="200" Keyboard="Default"/>
+        <Label Grid.Row="1" Grid.Column="0" Text="Status" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
+        <Entry Grid.Row="1" Grid.Column="1" x:Name="lblStatusValor" TextColor="Black" HorizontalTextAlignment="Start" />
+        <Label Grid.Row="2" Grid.Column="0" Text="Motivo" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+        <Entry Grid.Row="2" Grid.Column="1" x:Name="lblMotivoValor" TextColor="Black" />
+        <Label Grid.Row="3" Grid.Column="0" Text="Data" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+        <Entry Grid.Row="3" Grid.Column="1" x:Name="lblDataValor" TextColor="Black" />
+        <Label Grid.Row="4" Grid.Column="0" Text="Início" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+        <Entry Grid.Row="4" Grid.Column="1" x:Name="lbInicioValor" HorizontalTextAlignment="Start" TextColor="Black" VerticalOptions="Start"/>
+        <Label Grid.Row="4" Grid.Column="2" Text="Fim" HorizontalTextAlignment="Start"  VerticalTextAlignment="End" VerticalOptions="End"/>
+        <Entry Grid.Row="4" Grid.Column="3" x:Name="lblFimValor" HorizontalTextAlignment="Start" TextColor="Black" VerticalOptions="Start"/>
+        <Label Grid.Row="5" Grid.Column="0" Text="Atividade" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+        <Entry Grid.Row="5" Grid.Column="1" x:Name="lblAtividadeValor" HorizontalTextAlignment="Start" FontSize="Medium" VerticalOptions="Start"/>
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4"
+                        x:Name="btnConfirmar"
+                        Text="CONFIRMAR"
+                        BackgroundColor="#2DBDB6"
+                        TextColor="White"
+                        BorderWidth="0"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Clicked="OnConfClicked"/>
+      </Grid>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

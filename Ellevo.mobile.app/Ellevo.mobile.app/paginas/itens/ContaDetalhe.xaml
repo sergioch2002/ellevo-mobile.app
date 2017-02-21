@@ -39,9 +39,25 @@
                       BorderColor="Transparent"
                       Clicked="OnInstrClicked"
                       HorizontalOptions="Center"/>
+              <StackLayout Padding="2" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Label x:Name="lblProvId" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold"/>
+                <Label x:Name="lblProvData" HorizontalTextAlignment="Start" FontSize="Small"/>
+              </StackLayout>
             </Grid>
           </ScrollView>
         </StackLayout.Children>
+        <StackLayout VerticalOptions="End">
+          <StackLayout Padding="1" >
+            <Editor x:Name="textEditor" BackgroundColor="White" TextColor="Black" MinimumHeightRequest="60" HeightRequest="180"/>
+          </StackLayout>
+          <!--Regição da navegação do tramite/providencia-->
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="btnBack" BackgroundColor="#2DBDB6"  HorizontalOptions="Start" Clicked="OnBackClicked"/>
+            <Entry x:Name="pgGo" PlaceholderColor="Red" HorizontalOptions="Center" Completed="OnPageGo"/>
+            <Button x:Name="btnNext" BackgroundColor="#2DBDB6" Clicked="OnNextClicked"/>
+            <Label x:Name="lblPages" HorizontalOptions="EndAndExpand" VerticalOptions="End"/>
+          </StackLayout>
+        </StackLayout>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

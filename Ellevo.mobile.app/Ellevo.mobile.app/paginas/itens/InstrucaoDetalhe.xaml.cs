@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.novas;
 using System;
 using Xamarin.Forms;
 
@@ -15,6 +16,9 @@ namespace Ellevo.mobile.app.pages
             SizeChanged += OnSizeChanged;
             if(!string.IsNullOrEmpty(instrucaoId))
                 GetData();
+            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaIntrucao()); ; }));
+            this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
+            this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {

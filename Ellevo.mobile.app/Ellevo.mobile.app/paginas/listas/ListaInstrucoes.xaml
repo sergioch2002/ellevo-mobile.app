@@ -24,11 +24,11 @@
                   <RowDefinition Height="Auto"></RowDefinition>
                   <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Origem, StringFormat='{0}'}" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
-                <Label Grid.Row="0" Grid.Column="1" Text="{Binding OrigemNumero, StringFormat='{0}'}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
-                <!--<Image Grid.Row="0" Grid.Column="2" Source="{local:ImageResource Ellevo.mobile.app.images.phone-512.png}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>-->
-                <Label Grid.Row="1"  Grid.Column="0" Text="{Binding Remetente, StringFormat='Remetente: {0}'}" FontSize="14" LineBreakMode="TailTruncation" TextColor="Black"/>
-                <Label Grid.Row="2"  Grid.Column="0" Text="{Binding Titulo, StringFormat='Título: {0}'}"  FontSize="14" TextColor="Black"/>
+                <Label x:Name="lblOrigem" Grid.Row="0" Grid.Column="0" Text="{Binding Origem, StringFormat='{0}'}" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+                <Label x:Name="lblOrigemNumero" Grid.Row="0" Grid.Column="1" Text="{Binding OrigemNumero, StringFormat='{0}'}" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Start" TextColor="Black"/>
+                <!--<Image x:Name="lblImagem" Grid.Row="0" Grid.Column="2" Source="{local:ImageResource Ellevo.mobile.app.images.phone-512.png}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End"/>-->
+                <Label x:Name="lblRemetente" Grid.Row="1"  Grid.Column="0" Text="{Binding Remetente, StringFormat='Remetente: {0}'}" FontSize="14" LineBreakMode="TailTruncation" TextColor="Black"/>
+                <Label x:Name="lblTitulo" Grid.Row="2"  Grid.Column="0" Text="{Binding Titulo, StringFormat='Título: {0}'}"  FontSize="14" TextColor="Black"/>
               </Grid>
             </StackLayout>
           </ViewCell>

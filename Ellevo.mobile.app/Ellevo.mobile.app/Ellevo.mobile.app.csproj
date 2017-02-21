@@ -38,10 +38,13 @@
     <Compile Include="App.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="modelos\Acompanhamento.cs" />
+    <Compile Include="modelos\ApiWriter.cs" />
     <Compile Include="modelos\ApiReader.cs" />
     <Compile Include="modelos\Atividade.cs" />
     <Compile Include="modelos\Chamado.cs" />
     <Compile Include="modelos\Conta.cs" />
+    <Compile Include="modelos\DestinatariosViewModel.cs" />
+    <Compile Include="modelos\Grouping.cs" />
     <Compile Include="modelos\Instrucao.cs" />
     <Compile Include="modelos\InstrucaoDestinatario.cs" />
     <Compile Include="modelos\Motivo.cs" />
@@ -49,7 +52,11 @@
     <Compile Include="modelos\Status.cs" />
     <Compile Include="modelos\Tarefa.cs" />
     <Compile Include="modelos\Tramite.cs" />
-    <Compile Include="paginas\AprovacoesInicial.xaml.cs">
+    <Compile Include="modelos\Usuario.cs" />
+    <Compile Include="paginas\itens\Aprovacao.xaml.cs">
+      <DependentUpon>Aprovacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\itens\AprovacoesInicial.xaml.cs">
       <DependentUpon>AprovacoesInicial.xaml</DependentUpon>
     </Compile>
     <Compile Include="paginas\itens\ChamadoDetalhe.xaml.cs">
@@ -57,6 +64,9 @@
     </Compile>
     <Compile Include="paginas\itens\ContaDetalhe.xaml.cs">
       <DependentUpon>ContaDetalhe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\itens\Destinatarios.xaml.cs">
+      <DependentUpon>Destinatarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="paginas\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
@@ -96,6 +106,21 @@
     <Compile Include="modelos\IdiomaMobile.cs" />
     <Compile Include="modelos\TelaInicial.cs" />
     <Compile Include="modelos\Token.cs" />
+    <Compile Include="paginas\novas\NovaIntrucao.xaml.cs">
+      <DependentUpon>NovaIntrucao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\novas\NovaProvidencia.xaml.cs">
+      <DependentUpon>NovaProvidencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\novas\NovaTarefa.xaml.cs">
+      <DependentUpon>NovaTarefa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\novas\NovoChamado.xaml.cs">
+      <DependentUpon>NovoChamado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\novas\NovoTramite.xaml.cs">
+      <DependentUpon>NovoTramite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="modelos\Sessao.cs" />
     <Compile Include="paginas\StartPage.xaml.cs">
@@ -220,7 +245,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="paginas\AprovacoesInicial.xaml">
+    <EmbeddedResource Include="paginas\itens\AprovacoesInicial.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -251,6 +276,48 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="paginas\itens\ContaDetalhe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovaIntrucao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovoTramite.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovaProvidencia.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovoChamado.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovaTarefa.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\itens\Aprovacao.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\itens\Destinatarios.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
