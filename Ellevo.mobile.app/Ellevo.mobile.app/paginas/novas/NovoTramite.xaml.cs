@@ -3,6 +3,7 @@ using Ellevo.mobile.app.objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,9 +55,12 @@ namespace Ellevo.mobile.app.paginas.novas
             if (pickerStatus.SelectedIndex > -1)
                 selectedAtividade = (Atividade)atividade.SelectedItem;
         }
-        private void OnConfClicked(object Confsender, EventArgs args)
+        private async void OnConfClicked(object Confsender, EventArgs args)
         {
             Tramite tramite = new app.Tramite();
+            tramite.Atividades = new List<app.Atividade>();
+            tramite.Motivos = new List<app.Motivo>();
+            tramite.Status = new List<app.Status>();
 
             tramite.Atividades.Add(selectedAtividade);
             tramite.Motivos.Add(selectedMotivo);
@@ -68,11 +72,18 @@ namespace Ellevo.mobile.app.paginas.novas
             tramite.HoraInicio = DateTime.Now + tpInicio.Time;
             tramite.HoraFim = DateTime.Now + tpFim.Time;
 
-            ApiWriter.SendDataToApi<Tramite>("/api/v1/mob/providencia", tramite);
+            var response = await ApiWriter.SendDataToApi<Tramite>("/api/v1/mob/tramite", tramite);
+
+            if (response == HttpStatusCode.OK)
+            {
+                await DisplayAlert("Sucesso", "Trâmite criado com sucesso", "Sair");
+
+                await Navigation.PopAsync();
+            }
         }
         private async void GetData()
         {
-            var tarefa = await ApiReader.GetDataFromApi<Providencia>("/api/v1/mob/tramite/" + _chamadoId);
+            var tarefa = await ApiReader.GetDataFromApi<Tramite>("/api/v1/mob/tramite/" + _chamadoId);
             status = new List<Status>(tarefa.Status);
             motivos = new List<app.Motivo>(tarefa.Motivos);
             atividades = new List<Atividade>(tarefa.Atividades);

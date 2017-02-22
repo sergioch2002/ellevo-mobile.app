@@ -13,7 +13,7 @@ namespace Ellevo.mobile.app.objects
 {
     public class ApiWriter
     {
-        async public static void SendDataToApi<T>(string endpoint, T data)
+        async public static Task<HttpStatusCode> SendDataToApi<T>(string endpoint, T data)
         {
             StringContent queryString  = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
@@ -35,6 +35,8 @@ namespace Ellevo.mobile.app.objects
                 var response = await client.PostAsync(endpoint, queryString);
 
                 response.EnsureSuccessStatusCode();
+
+                return response.StatusCode;
             }
         }
     }

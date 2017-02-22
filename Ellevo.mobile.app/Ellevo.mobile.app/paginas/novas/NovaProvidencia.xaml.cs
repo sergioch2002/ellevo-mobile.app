@@ -3,6 +3,7 @@ using Ellevo.mobile.app.objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,7 +55,7 @@ namespace Ellevo.mobile.app.paginas.novas
             if (pickerStatus.SelectedIndex > -1)
                 selectedAtividade = (Atividade)atividade.SelectedItem;
         }
-        private void OnConfClicked(object Confsender, EventArgs args)
+        private async void OnConfClicked(object Confsender, EventArgs args)
         {
             Providencia providencia = new app.Providencia();
             providencia.Atividades = new List<Atividade>();
@@ -71,7 +72,13 @@ namespace Ellevo.mobile.app.paginas.novas
             providencia.HoraInicio = DateTime.Now + tpInicio.Time;
             providencia.HoraFim = DateTime.Now + tpFim.Time;
 
-            ApiWriter.SendDataToApi<Providencia>("/api/v1/mob/providencia", providencia);
+            var response = await ApiWriter.SendDataToApi<Providencia>("/api/v1/mob/providencia", providencia);
+            if (response == HttpStatusCode.OK)
+            {
+                await DisplayAlert("Sucesso", "Providência criada com sucesso", "Sair");
+
+                await Navigation.PopAsync();
+            }
         }
         private async void GetData()
         {
