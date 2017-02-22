@@ -45,7 +45,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnProvClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NovaProvidencia(_tarefaId));
+            await Navigation.PushAsync(new NovaProvidencia(_tarefaId), true);
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
