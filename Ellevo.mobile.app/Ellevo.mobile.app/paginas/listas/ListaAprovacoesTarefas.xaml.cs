@@ -33,7 +33,7 @@ namespace Ellevo.mobile.app.pages.lists
                 listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
                 {
                     tarefa = (Tarefa)listView.SelectedItem;
-                    await Navigation.PushAsync(new TarefaDetalhe(tarefa.TarefaId.ToString()));
+                    await Navigation.PushAsync(new TarefaDetalhe(tarefa.TarefaId.ToString(), true));
                 };
             }
             else

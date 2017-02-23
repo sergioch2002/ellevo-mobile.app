@@ -9,7 +9,10 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
   </ContentPage.Padding>
   <StackLayout>
-    <ListView x:Name="listView" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Black">
+    <ListView x:Name="listView"
+              HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              SeparatorColor="Black">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

@@ -28,6 +28,7 @@ namespace Ellevo.mobile.app.pages
             {
                 listView.ItemsSource = acompanhamentos.OrderByDescending(x => x.ContaId);
                 Conta conta = new Conta();
+                
                 listView.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
                 {
                     conta = (Conta)listView.SelectedItem;

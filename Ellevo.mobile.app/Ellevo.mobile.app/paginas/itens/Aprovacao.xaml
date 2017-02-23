@@ -1,6 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bp="clr-namespace:Ellevo.mobile.app.controles;assembly=Ellevo.mobile.app"
              x:Class="Ellevo.mobile.app.paginas.itens.Aprovacao">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout>
+        <StackLayout.Children>
+          <ScrollView>
+            <Grid RowSpacing="0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblTitulo" Text="Título" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="lblTituloValor" HorizontalTextAlignment="Start" FontSize="Large" VerticalTextAlignment="Start" VerticalOptions="Start"/>
+              <Label Grid.Row="2" Grid.Column="0" x:Name="lblStatus" Text="Situação" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
+              <Picker Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="2" x:Name="pickerStatus" Title="Selecione um status..."/>
+              <Label Grid.Row="4" Grid.Column="0" x:Name="lblMotivo" Text="Motivo da Reprovação" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+              <bp:BindablePicker Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" x:Name="bpMotivo" DisplayProperty="Descricao" SelectedIndexChanged="OnMotivoSelected" Title="Selecione um motivo..."/>
+              <Label Grid.Row="6" Grid.Column="0" x:Name="lblComentarios" Text="Comentários" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+              <Entry Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="3" x:Name="entryComentarios" TextColor="Black" VerticalOptions="Center"/>
+                <Button  Grid.Row="10" Grid.Column="0"
+                        x:Name="btnConfirmar"
+                        Text="CONFIRMAR"
+                        BackgroundColor="#2DBDB6"
+                        TextColor="White"
+                        BorderWidth="0"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Clicked="OnConfirmClicked"/>
+              <!--Faixa com dados do tramite/providenca-->
+            </Grid>
+          </ScrollView>
+        </StackLayout.Children>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
 </ContentPage>

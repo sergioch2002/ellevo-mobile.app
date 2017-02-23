@@ -36,9 +36,23 @@
               <Label Grid.Row="0" Grid.Column="0" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
               <Editor Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="3" x:Name="lblDescValor" HeightRequest="200" WidthRequest="200" Keyboard="Default" HorizontalOptions="FillAndExpand"/>
               <Label Grid.Row="3" Grid.Column="0" Text="Status" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
-              <bp:BindablePicker Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" x:Name="pickerStatus" DisplayProperty="Traducao"  HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnStatusSelected"/>
+              <bp:BindablePicker Grid.Row="3" 
+                                 Grid.Column="1" 
+                                 Grid.ColumnSpan="4" 
+                                 x:Name="pickerStatus" 
+                                 DisplayProperty="Traducao" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 SelectedIndexChanged="OnStatusSelected"
+                                 Title="Selecione um status..."/>
               <Label Grid.Row="4" Grid.Column="0" Text="Motivo" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
-              <bp:BindablePicker Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" x:Name="pickerMotivos" DisplayProperty="Descricao"  HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnMotivoSelected"/>
+              <bp:BindablePicker Grid.Row="4" 
+                                 Grid.Column="1" 
+                                 Grid.ColumnSpan="4" 
+                                 x:Name="pickerMotivos" 
+                                 DisplayProperty="Descricao" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 SelectedIndexChanged="OnMotivoSelected"
+                                 Title="Selecione um motivo"/>
               <Label Grid.Row="5" Grid.Column="0" Text="Data" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
               <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpDataValor" Date="{x:Static sys:DateTime.Now}"  HorizontalOptions="FillAndExpand">
                 <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
@@ -48,7 +62,14 @@
               <Label Grid.Row="6" Grid.Column="2" Text="Fim" HorizontalTextAlignment="Start" />
               <TimePicker Grid.Row="6" Grid.Column="3"  Grid.ColumnSpan="2" x:Name="tpFim" />
               <Label Grid.Row="7" Grid.Column="0" Text="Atividade" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
-              <bp:BindablePicker Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" x:Name="pickerAtividades" DisplayProperty="Descricao" HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnAtividadeSelected"/>
+              <bp:BindablePicker Grid.Row="7" 
+                                 Grid.Column="1" 
+                                 Grid.ColumnSpan="4" 
+                                 x:Name="pickerAtividades" 
+                                 DisplayProperty="Descricao" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 SelectedIndexChanged="OnAtividadeSelected"
+                                 Title="Selecione uma atividade..."/>
               <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4"
                               x:Name="btnConfirmar"
                               Text="CONFIRMAR"

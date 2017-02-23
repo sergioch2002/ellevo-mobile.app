@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.itens;
 using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,15 @@ namespace Ellevo.mobile.app.pages.itens
         private int _currentProv;
         private int _numProvidencias;
         private bool _isHtml;
+        private bool _isAprovacao;
+
+        private Tarefa tarefa;
+
+        public TarefaDetalhe(string tarefaId, bool isAprovacao) : this(tarefaId)
+        {
+            this._isAprovacao = isAprovacao;
+            btnProvid.Text = "APROVAR";
+        }
         public TarefaDetalhe(string tarefaId)
         {
             this._tarefaId = tarefaId;
@@ -43,9 +53,13 @@ namespace Ellevo.mobile.app.pages.itens
             this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
             this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
         }
+
         private async void OnProvClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NovaProvidencia(_tarefaId), true);
+            if (_isAprovacao)
+                await Navigation.PushAsync(new Aprovacao(null, tarefa));
+            else
+                await Navigation.PushAsync(new NovaProvidencia(_tarefaId), true);
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
@@ -62,7 +76,7 @@ namespace Ellevo.mobile.app.pages.itens
             else
                 this._currentProv = this._numProvidencias;
 
-            LoadTramites(this._currentProv);
+            LoadProvidencias(this._currentProv);
         }
         private void OnNextClicked(object sender, EventArgs e)
         {
@@ -71,20 +85,20 @@ namespace Ellevo.mobile.app.pages.itens
             else
                 this._currentProv = 1;
 
-            LoadTramites(this._currentProv);
+            LoadProvidencias(this._currentProv);
         }
         private void OnPageGo(object sender, EventArgs e)
         {
             int pgToGo = 0;
             if (int.TryParse(pgGo.Text, out pgToGo) && (pgToGo >= 1 && pgToGo <= this._numProvidencias))
-                LoadTramites(pgToGo);
+                LoadProvidencias(pgToGo);
             else
                 DisplayAlert("Erro", "Digite um valor válido", "Fechar");
 
         }
         private async void GetData()
         {
-            var tarefa = await ApiReader.GetDataFromApi<Tarefa>("/api/v1/mob/tarefa/" + _tarefaId);
+            tarefa = await ApiReader.GetDataFromApi<Tarefa>("/api/v1/mob/tarefa/" + _tarefaId);
             
             if (tarefa != null)
             {
@@ -110,7 +124,7 @@ namespace Ellevo.mobile.app.pages.itens
                 if (tarefa.QuantidadeProvidencias > 0)
                 {
                     this._numProvidencias = tarefa.QuantidadeProvidencias;
-                    LoadTramites(tarefa.QuantidadeProvidencias);
+                    LoadProvidencias(tarefa.QuantidadeProvidencias);
                 }
             }
             else
@@ -126,7 +140,7 @@ namespace Ellevo.mobile.app.pages.itens
                 this.Content.HorizontalOptions = LayoutOptions.Center;
             }
         }
-        private async void LoadTramites(int qtdProvidencias)
+        private async void LoadProvidencias(int qtdProvidencias)
         {
             this._currentProv = qtdProvidencias;
 

@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.itens;
 using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,15 @@ namespace Ellevo.mobile.app.pages.itens
         private int _currentTramite;
         private int _numTramites;
         private bool _isHtml;
+        private bool _isAprovacao;
+
+        private Chamado chamado;
+
+        public ChamadoDetalhe(string chamadoId, bool isAprovacao) : this(chamadoId)
+        {
+            this._isAprovacao = isAprovacao;
+            btnTramite.Text = "APROVAR";
+        }
         public ChamadoDetalhe(string chamadoId)
         {
             this._chamadoId = chamadoId;
@@ -44,7 +54,10 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnTramClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NovoTramite(_chamadoId));
+            if (_isAprovacao)
+                await Navigation.PushAsync(new Aprovacao(chamado, null));
+            else
+                await Navigation.PushAsync(new NovoTramite(_chamadoId));
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
@@ -83,7 +96,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void GetData()
         {
-            var chamado = await ApiReader.GetDataFromApi<Chamado>("/api/v1/mob/chamado/" + _chamadoId);
+            chamado = await ApiReader.GetDataFromApi<Chamado>("/api/v1/mob/chamado/" + _chamadoId);
             if (chamado != null)
             {
                 lblClienteValor.Text = chamado.NomeCliente;
