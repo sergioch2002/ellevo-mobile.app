@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Ellevo.mobile.app.paginas.novas.NovaIntrucao"
+             x:Class="Ellevo.mobile.app.paginas.novas.NovaInstrucao"
   Title="Nova Instrução">
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 10, 10, 10" WinPhone="10, 10, 10, 10" />
-  </ContentPage.Padding>
-  <ContentPage.Content>
-    <ScrollView>
-      <StackLayout Padding="1" BackgroundColor="Black">
-        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
-          <Label x:Name="lbltxtInst" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
-          <Editor x:Name="textInstrucao" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="200"/>
-          <Label x:Name="lbltxtDest" Text="Destinatários" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
-          <Editor x:Name="textDestinatarios" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="100" TextChanged="OnTextChanged"/>
-          <Button x:Name="btnConfirmar"
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 10, 10, 10" WinPhone="10, 10, 10, 10" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="1" BackgroundColor="Black">
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                    <Label x:Name="lbltxtInst" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+                    <Editor x:Name="textInstrucao" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="200"/>
+                    <Label x:Name="lbltxtDest" Text="Destinatários" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+                    <Editor x:Name="textDestinatarios" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="100" TextChanged="OnTextChanged"/>
+                    <Button x:Name="btnConfirmar"
                                   Text="CONFIRMAR"
                                   BackgroundColor="#2DBDB6"
                                   TextColor="White"
@@ -22,8 +22,8 @@
                                   BorderColor="Transparent"
                                   HorizontalOptions="Center"
                                   Clicked="OnConfirClicked"/>
-        </StackLayout>
-      </StackLayout>
-    </ScrollView>
-  </ContentPage.Content>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

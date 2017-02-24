@@ -6,19 +6,14 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
   </ContentPage.Padding>
   <ContentPage.Content>
-  <ListView x:Name="GruposList" ItemsSource="{Binding destinatarios}" SeparatorVisibility="None">
+     <ScrollView>
+  <ListView x:Name="GruposList" SeparatorVisibility="None">
     <ListView.ItemTemplate>
       <DataTemplate>
         <TextCell Text="{Binding Nome}"/>
-        <!--<ListView ItemsSource="{Binding Usuarios}">
-          <ListView.ItemTemplate>
-            <DataTemplate>
-              <TextCell Text="{Binding Nome}"/>
-            </DataTemplate>
-          </ListView.ItemTemplate>
-        </ListView>-->
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+     </ScrollView>
     </ContentPage.Content>
 </ContentPage>

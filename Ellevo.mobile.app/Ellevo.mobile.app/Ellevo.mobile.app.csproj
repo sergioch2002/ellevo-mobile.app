@@ -44,8 +44,6 @@
     <Compile Include="modelos\Atividade.cs" />
     <Compile Include="modelos\Chamado.cs" />
     <Compile Include="modelos\Conta.cs" />
-    <Compile Include="modelos\DestinatariosViewModel.cs" />
-    <Compile Include="modelos\Grouping.cs" />
     <Compile Include="modelos\Instrucao.cs" />
     <Compile Include="modelos\InstrucaoDestinatario.cs" />
     <Compile Include="modelos\Motivo.cs" />
@@ -53,7 +51,6 @@
     <Compile Include="modelos\Status.cs" />
     <Compile Include="modelos\Tarefa.cs" />
     <Compile Include="modelos\Tramite.cs" />
-    <Compile Include="modelos\Usuario.cs" />
     <Compile Include="paginas\itens\Aprovacao.xaml.cs">
       <DependentUpon>Aprovacao.xaml</DependentUpon>
     </Compile>
@@ -68,6 +65,9 @@
     </Compile>
     <Compile Include="paginas\itens\Destinatarios.xaml.cs">
       <DependentUpon>Destinatarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="paginas\itens\DestinatariosUsuarios.xaml.cs">
+      <DependentUpon>DestinatariosUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="paginas\itens\InstrucaoDetalhe.xaml.cs">
       <DependentUpon>InstrucaoDetalhe.xaml</DependentUpon>
@@ -319,6 +319,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="paginas\itens\Destinatarios.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\itens\DestinatariosUsuarios.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

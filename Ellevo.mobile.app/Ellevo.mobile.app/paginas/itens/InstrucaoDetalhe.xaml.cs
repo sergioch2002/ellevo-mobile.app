@@ -16,7 +16,7 @@ namespace Ellevo.mobile.app.pages
             SizeChanged += OnSizeChanged;
             if(!string.IsNullOrEmpty(instrucaoId))
                 GetData();
-            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaIntrucao()); ; }));
+            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaInstrucao()); ; }));
             this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
             this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
         }
