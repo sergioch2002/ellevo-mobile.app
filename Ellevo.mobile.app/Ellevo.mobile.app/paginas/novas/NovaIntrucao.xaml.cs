@@ -15,15 +15,35 @@ namespace Ellevo.mobile.app.paginas.novas
         public NovaInstrucao()
         {
             InitializeComponent();
+            DestinatariosUsuarios id = new DestinatariosUsuarios();
+            id.UsuariosAdicionados += HandleUsuarioAdiconado;
         }
         private async void OnTextChanged(object sender, EventArgs e)
         {
-            var destinatarios = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/DestinatariosGrupos");
+            
 
-            Destinatarios destinatariosPage = new itens.Destinatarios(destinatarios);
+            Destinatarios destinatariosPage = new itens.Destinatarios();
+            await destinatariosPage.GetData();
             await Navigation.PushModalAsync(destinatariosPage);
 
-            textDestinatarios.Text = "";
+            //var t = Task.Factory.StartNew(() => destinatariosPage.GetData().Wait());
+            
+            //t.Start();
+            //Task.WaitAll(t);
+
+
+            //var u = destinatariosPage.GetData(grupo).Result;
+
+                textDestinatarios.Text = string.Empty;
+
+           
+
+        }
+
+        private void HandleUsuarioAdiconado(object sender, EventArgs e)
+        {
+            InstrucaoDestinatario id;
+            //textDestinatarios.Text = (InstrucaoDestinatario)e.
         }
         private async void OnConfirClicked(object sender, EventArgs e)
         {

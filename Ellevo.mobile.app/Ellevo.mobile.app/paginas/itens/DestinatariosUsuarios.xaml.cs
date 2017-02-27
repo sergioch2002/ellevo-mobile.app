@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.novas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,45 +18,34 @@ namespace Ellevo.mobile.app.paginas.itens
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DestinatariosUsuarios : ContentPage
     {
-        public DestinatariosUsuarios(IEnumerable<InstrucaoDestinatario> destinatarios)
+        public event EventHandler UsuariosAdicionados;
+
+        public DestinatariosUsuarios()
         {
             InitializeComponent();
+        }
+        public async Task GetData(InstrucaoDestinatario grupo)
+        {
+            var destinatarios = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/destinatariosusuarios/" + grupo.UsuarioId);
+
             UsuariosList.ItemsSource = destinatarios;
 
             UsuariosList.ItemSelected += (object sender, SelectedItemChangedEventArgs e) =>
             {
-                DisplayAlert("aaa", "usuario escolhido", "sair");
+                var usuario = (InstrucaoDestinatario)UsuariosList.SelectedItem;
+
+                EventHandler handler = UsuariosAdicionados;
+                if(handler != null)
+                    handler(this, e);
+
+                DisplayAlert("Atenção", "Usuario " + usuario.Nome + " escolhido!", "OK");
             };
-            //BindingContext = new ContentPageViewModel();
+        }
+
+        private async void OnSairClicked(object sender, EventArgs e)
+        {
+            await this.Navigation.PopModalAsync();
         }
     }
-
-    class DestinatariosUsuariosViewModel : INotifyPropertyChanged
-    {
-
-        public DestinatariosUsuariosViewModel()
-        {
-            IncreaseCountCommand = new Command(IncreaseCount);
-        }
-
-        int count;
-
-        string countDisplay = "You clicked 0 times.";
-        public string CountDisplay
-        {
-            get { return countDisplay; }
-            set { countDisplay = value; OnPropertyChanged(); }
-        }
-
-        public ICommand IncreaseCountCommand { get; }
-
-        void IncreaseCount() =>
-            CountDisplay = $"You clicked {++count} times";
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName]string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-    }
+    
 }

@@ -6,14 +6,26 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
   </ContentPage.Padding>
   <ContentPage.Content>
-     <ScrollView>
-  <ListView x:Name="GruposList" SeparatorVisibility="None">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <TextCell Text="{Binding Nome}"/>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
-     </ScrollView>
-    </ContentPage.Content>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+      <ScrollView  VerticalOptions="FillAndExpand">
+        <ListView x:Name="GruposList" SeparatorVisibility="None">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <TextCell Text="{Binding Nome}"/>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </ScrollView>
+      <StackLayout VerticalOptions="End">
+        <Button x:Name="btnConfirmar"
+                              Text="SAIR"
+                              BackgroundColor="#2DBDB6"
+                              TextColor="White"
+                              BorderWidth="0"
+                              BorderColor="Transparent"
+                              HorizontalOptions="Center"
+                              Clicked="OnSairClicked"/>
+      </StackLayout>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

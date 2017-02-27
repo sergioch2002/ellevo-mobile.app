@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:bp="clr-namespace:Ellevo.mobile.app.controles;assembly=Ellevo.mobile.app"
+             x:Class="Ellevo.mobile.app.paginas.novas.NovaInstrucao2"
+             Title="NovaInstrucao2">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label x:Name="lbltxtInst" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+            <Editor x:Name="textInstrucao" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="100"/>
+            <Label x:Name="lbltxtDest" Text="Destinatários" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+            <Editor x:Name="textDestinatarios" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="100" TextChanged="OnTextChanged"/>
+            <bp:BindablePicker x:Name="pickerGrupo" 
+                                 DisplayProperty="Nome" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 SelectedIndexChanged="OnGrupoSelected"
+                                 Title="Selecione um grupo..."/>
+            <bp:BindablePicker x:Name="pickerUsuario" 
+                                 DisplayProperty="Nome" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 SelectedIndexChanged="OnUsuarioSelected"
+                                 Title="Selecione um grupo..."/>
+            <Button x:Name="btnConfirmar"
+                                  Text="CONFIRMAR"
+                                  BackgroundColor="#2DBDB6"
+                                  TextColor="White"
+                                  BorderWidth="0"
+                                  BorderColor="Transparent"
+                                  HorizontalOptions="Center"
+                                  Clicked="OnConfirClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

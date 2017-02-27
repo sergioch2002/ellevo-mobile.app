@@ -11,28 +11,32 @@ namespace Ellevo.mobile.app.paginas.itens
 {
     public partial class Destinatarios : ContentPage
     {
-        public Destinatarios(IEnumerable<InstrucaoDestinatario> dest)
+
+        public Destinatarios()
         {
-            
             InitializeComponent();
-            GruposList.ItemsSource = dest;
-            GetData();
+            
+
         }
-        private async void GetData()
+        public async Task GetData()
         {
-            InstrucaoDestinatario grupo = new app.InstrucaoDestinatario();
+            var grupo = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/DestinatariosGrupos");
+            GruposList.ItemsSource = grupo;
+
+            InstrucaoDestinatario grupoSelecionado = new app.InstrucaoDestinatario();
 
             GruposList.ItemSelected += async (object sender, SelectedItemChangedEventArgs e) =>
             {
-                grupo = (InstrucaoDestinatario)GruposList.SelectedItem;
+                grupoSelecionado = (InstrucaoDestinatario)GruposList.SelectedItem;
 
-                var destinatarios = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/destinatariosusuarios?" + grupo.UsuarioId);
-                DestinatariosUsuarios destUsu = new DestinatariosUsuarios(destinatarios);
+                DestinatariosUsuarios destUsu = new DestinatariosUsuarios();
+                await destUsu.GetData(grupoSelecionado);
+                await Navigation.PushModalAsync(destUsu);
             };
         }
-        private void OnSairClicked(object sender, EventArgs e)
+        private async void OnSairClicked(object sender, EventArgs e)
         {
-           
+            await this.Navigation.PopModalAsync();
         }
     }
 }

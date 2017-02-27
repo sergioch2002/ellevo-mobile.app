@@ -29,7 +29,7 @@ namespace Ellevo.mobile.app
         {
             var animation = new Animation(callback: d => btnConfirma.Rotation = d,
                                   start: btnConfirma.Rotation,
-                                  end: btnConfirma.Rotation + 360,
+                                  end: btnConfirma.Rotation + 60,
                                   easing: Easing.SpringOut);
             animation.Commit(btnConfirma, "Loop", length: 400);
 

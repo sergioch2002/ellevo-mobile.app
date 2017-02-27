@@ -107,6 +107,9 @@
     <Compile Include="modelos\IdiomaMobile.cs" />
     <Compile Include="modelos\TelaInicial.cs" />
     <Compile Include="modelos\Token.cs" />
+    <Compile Include="paginas\novas\NovaInstrucao2.xaml.cs">
+      <DependentUpon>NovaInstrucao2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="paginas\novas\NovaIntrucao.xaml.cs">
       <DependentUpon>NovaIntrucao.xaml</DependentUpon>
     </Compile>
@@ -325,6 +328,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="paginas\itens\DestinatariosUsuarios.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="paginas\novas\NovaInstrucao2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

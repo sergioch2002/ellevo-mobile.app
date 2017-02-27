@@ -16,7 +16,7 @@ namespace Ellevo.mobile.app
             SizeChanged += OnSizeChanged;
             GetData();
             
-            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaInstrucao()); ; }));
+            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaInstrucao2()); ; }));
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {

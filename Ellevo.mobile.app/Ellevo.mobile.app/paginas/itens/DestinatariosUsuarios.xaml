@@ -3,13 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ellevo.mobile.app.paginas.itens.DestinatariosUsuarios"
              Title="DestinatariosUsuarios">
-  <ScrollView>
-        <ListView x:Name="UsuariosList" SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Nome}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </ScrollView>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+        <ScrollView  VerticalOptions="FillAndExpand">
+            <ListView x:Name="UsuariosList" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Nome}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        <StackLayout VerticalOptions="End">
+            <Button x:Name="btnConfirmar"
+                                  Text="SAIR"
+                                  BackgroundColor="#2DBDB6"
+                                  TextColor="White"
+                                  BorderWidth="0"
+                                  BorderColor="Transparent"
+                                  HorizontalOptions="Center"
+                                  Clicked="OnSairClicked"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

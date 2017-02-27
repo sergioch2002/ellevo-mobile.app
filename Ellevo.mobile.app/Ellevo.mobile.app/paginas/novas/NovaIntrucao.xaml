@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="1" BackgroundColor="Black">
-                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand"    >
                     <Label x:Name="lbltxtInst" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
                     <Editor x:Name="textInstrucao" FontSize="12" BackgroundColor="White" TextColor="Black" HeightRequest="200"/>
                     <Label x:Name="lbltxtDest" Text="Destinatários" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
