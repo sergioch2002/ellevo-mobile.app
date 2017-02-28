@@ -37,6 +37,11 @@ namespace Ellevo.mobile.app.paginas.itens
             }
             else
                 return;
+
+            pickerStatus.SelectedIndexChanged += (statusSender, args) =>
+            {
+                aprovacaoStatus = (string)pickerStatus.Items[pickerStatus.SelectedIndex] == "Aprova" ? 1 : 0;
+            };
         }
 
         private async void GetData(Chamado chamado, Tarefa tarefa)
@@ -60,10 +65,7 @@ namespace Ellevo.mobile.app.paginas.itens
                 pickerStatus.Items.Add(item);
             }
 
-            pickerStatus.SelectedIndexChanged += (statusSender, args) =>
-            {
-                aprovacaoStatus = (string)pickerStatus.Items[pickerStatus.SelectedIndex] == "Aprova" ? 1 : 0;
-            };
+            
         }
         private void OnMotivoSelected(object sender, EventArgs a)
         {

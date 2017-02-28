@@ -19,6 +19,9 @@ namespace Ellevo.mobile.app
         {
             InitializeComponent();
             SizeChanged += OnSizeChanged;
+            waitActivityIndicator.HeightRequest = 60;
+            waitActivityIndicator.WidthRequest = 60;
+            Sessao.ItensPorPagina = 10;
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -29,13 +32,13 @@ namespace Ellevo.mobile.app
         {
             var animation = new Animation(callback: d => btnConfirma.Rotation = d,
                                   start: btnConfirma.Rotation,
-                                  end: btnConfirma.Rotation + 60,
+                                  end: btnConfirma.Rotation + 360,
                                   easing: Easing.SpringOut);
-            animation.Commit(btnConfirma, "Loop", length: 400);
+            animation.Commit(btnConfirma, "Loop", length: 250);
 
             if(string.IsNullOrEmpty(URL.Text))
-                //URL.Text = "http://es044/trunk";
-                URL.Text = "http://desenv.0800net.com.br/mobile";
+                URL.Text = "http://es044/trunk";
+                //URL.Text = "http://desenv.0800net.com.br/mobile";
 
             if (string.IsNullOrEmpty(URL.Text))
                 return;
@@ -87,6 +90,7 @@ namespace Ellevo.mobile.app
         {
             if (endpoint[endpoint.Length - 1] == '/')
                 endpoint = endpoint.Substring(0, endpoint.Length - 1);
+            
             waitActivityIndicator.IsRunning = true;
             endpoint += "/api/v1/mob/configuracao";
             HttpClientHandler handler = new HttpClientHandler()

@@ -1,4 +1,5 @@
-﻿using Ellevo.mobile.app.objects;
+﻿using Ellevo.mobile.app.modelos;
+using Ellevo.mobile.app.objects;
 using Ellevo.mobile.app.paginas.itens;
 using Ellevo.mobile.app.paginas.novas;
 using System;
@@ -63,7 +64,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado!", "Nova Instrução clicado.", "Fechar");
+            await Navigation.PushAsync(new NovaInstrucao2());
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -157,19 +158,19 @@ namespace Ellevo.mobile.app.pages.itens
             this._isHtml = providencia.FirstOrDefault().TipoDescricao.ToLower().Contains(".htm") ? true : false;
             lblProvData.Text = providencia.FirstOrDefault().Data.Value.ToString();
             lblPages.Text = this._currentProv.ToString() + "-" + this._numProvidencias.ToString();
-            if (this._isHtml)
-            {
-                var browser = new WebView
-                {
-                    HeightRequest = 180
-                };
-                var htmlSource = new HtmlWebViewSource
-                {
-                    Html = "<html><body>" + providencia.FirstOrDefault().Descricao.Replace(@"\", string.Empty) + "</body></html>"
-                };
-                browser.Source = htmlSource;
-            }
-            textEditor.Text = providencia.FirstOrDefault().Descricao;
+            //if (this._isHtml)
+            //{
+            //    var browser = new WebView
+            //    {
+            //        HeightRequest = 180
+            //    };
+            //    var htmlSource = new HtmlWebViewSource
+            //    {
+            //        Html = "<html><body>" + providencia.FirstOrDefault().Descricao.Replace(@"\", string.Empty) + "</body></html>"
+            //    };
+            //    browser.Source = htmlSource;
+            //}
+            textEditor.Text = RemovedorHTML.RemoveTagsCharArray(providencia.FirstOrDefault().Descricao);
         }
     }
 }

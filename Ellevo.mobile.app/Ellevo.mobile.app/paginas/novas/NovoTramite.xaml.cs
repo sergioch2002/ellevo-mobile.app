@@ -30,6 +30,8 @@ namespace Ellevo.mobile.app.paginas.novas
             InitializeComponent();
 
             this.Title = "Novo Trâmite do chamado " + chamadoId;
+            tpFim.Time = DateTime.Now.TimeOfDay;
+            tpInicio.Time = DateTime.Now.TimeOfDay;
         }
 
         private void OnStatusSelected(object sender, EventArgs e)

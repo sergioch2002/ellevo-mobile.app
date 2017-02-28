@@ -36,5 +36,10 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-  </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="btnBack" BackgroundColor="#2DBDB6"  HorizontalOptions="Start" Clicked="OnBackClicked"/>
+            <Entry x:Name="pgGo" PlaceholderColor="Red" HorizontalOptions="Center" Completed="OnPageGo"/>
+            <Button x:Name="btnNext" BackgroundColor="#2DBDB6" Clicked="OnNextClicked"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

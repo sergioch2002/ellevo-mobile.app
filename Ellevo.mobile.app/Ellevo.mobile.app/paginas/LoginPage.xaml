@@ -9,14 +9,14 @@
     <ScrollView>
       <StackLayout>
         <StackLayout.Children>
-          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
+          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 10, 0, 0">
             <Image Source="logomobile150x150.png"
                    HeightRequest="100"
                    WidthRequest="100"/>
             <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"/>
           </StackLayout>
           <!--Container do login-->
-          <StackLayout Padding="0, 50, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
+          <StackLayout Padding="0, 10, 0, 0" VerticalOptions="Start" HorizontalOptions="Center">
             <Label x:Name="lblRestrito" Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Start"
                    FontAttributes="Bold"

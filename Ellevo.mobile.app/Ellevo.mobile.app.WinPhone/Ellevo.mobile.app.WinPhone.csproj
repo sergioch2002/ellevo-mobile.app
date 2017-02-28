@@ -110,6 +110,7 @@
     <Content Include="lido.png" />
     <Content Include="logomobile150x150.png" />
     <Content Include="remover.png" />
+    <Content Include="reply.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

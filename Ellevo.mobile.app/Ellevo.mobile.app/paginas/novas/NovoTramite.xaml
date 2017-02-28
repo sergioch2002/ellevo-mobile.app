@@ -4,39 +4,39 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:bp="clr-namespace:Ellevo.mobile.app.controles;assembly=Ellevo.mobile.app"
              x:Class="Ellevo.mobile.app.paginas.novas.NovoTramite">
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
-  </ContentPage.Padding>
-  <ContentPage.Content>
-    <ScrollView>
-      <StackLayout>
-        <StackLayout.Children>
-          <ScrollView>
-            <Grid RowSpacing="0">
-              <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-              </Grid.RowDefinitions>
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-              </Grid.ColumnDefinitions>
-              <Label Grid.Row="0" Grid.Column="0" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
-              <Editor Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="3" x:Name="lblDescValor" HeightRequest="200" WidthRequest="200" Keyboard="Default" HorizontalOptions="FillAndExpand"/>
-              <Label Grid.Row="3" Grid.Column="0" Text="Status" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
-              <bp:BindablePicker Grid.Row="3" 
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 0" WinPhone="10, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout.Children>
+                    <ScrollView>
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Descrição" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+                            <Editor Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="3" x:Name="lblDescValor" HeightRequest="200" WidthRequest="200" Keyboard="Default" HorizontalOptions="FillAndExpand"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="Status" VerticalTextAlignment="End" HorizontalTextAlignment="Start" />
+                            <bp:BindablePicker Grid.Row="3" 
                                  Grid.Column="1" 
                                  Grid.ColumnSpan="4" 
                                  x:Name="pickerStatus" 
@@ -44,8 +44,8 @@
                                  HorizontalOptions="FillAndExpand" 
                                  SelectedIndexChanged="OnStatusSelected"
                                  Title="Selecione um status..."/>
-              <Label Grid.Row="4" Grid.Column="0" Text="Motivo" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
-              <bp:BindablePicker Grid.Row="4" 
+                            <Label Grid.Row="4" Grid.Column="0" Text="Motivo" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+                            <bp:BindablePicker Grid.Row="4" 
                                  Grid.Column="1" 
                                  Grid.ColumnSpan="4" 
                                  x:Name="pickerMotivos" 
@@ -53,16 +53,16 @@
                                  HorizontalOptions="FillAndExpand" 
                                  SelectedIndexChanged="OnMotivoSelected"
                                  Title="Selecione um motivo"/>
-              <Label Grid.Row="5" Grid.Column="0" Text="Data" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
-              <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpDataValor" Date="{x:Static sys:DateTime.Now}"  HorizontalOptions="FillAndExpand">
-                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
-              </DatePicker>
-              <Label Grid.Row="6" Grid.Column="0" Text="Início" HorizontalTextAlignment="Start"/>
-              <TimePicker Grid.Row="6" Grid.Column="1"  Grid.ColumnSpan="2" x:Name="tpInicio" />
-              <Label Grid.Row="6" Grid.Column="2" Text="Fim" HorizontalTextAlignment="Start" />
-              <TimePicker Grid.Row="6" Grid.Column="3"  Grid.ColumnSpan="2" x:Name="tpFim" />
-              <Label Grid.Row="7" Grid.Column="0" Text="Atividade" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
-              <bp:BindablePicker Grid.Row="7" 
+                            <Label Grid.Row="5" Grid.Column="0" Text="Data" VerticalTextAlignment="End" HorizontalTextAlignment="Start"/>
+                            <DatePicker Grid.Row="5" Grid.Column="1" x:Name="dpDataValor" Date="{x:Static sys:DateTime.Now}"  HorizontalOptions="FillAndExpand">
+                                <DatePicker.Format>dd-MM-yyyy</DatePicker.Format>
+                            </DatePicker>
+                            <Label Grid.Row="6" Grid.Column="0" Text="Início" HorizontalTextAlignment="Start"/>
+                            <TimePicker Grid.Row="6" Grid.Column="1"  Grid.ColumnSpan="2" x:Name="tpInicio" />
+                            <Label Grid.Row="6" Grid.Column="2" Text="Fim" HorizontalTextAlignment="Start" />
+                            <TimePicker Grid.Row="6" Grid.Column="3"  Grid.ColumnSpan="2" x:Name="tpFim" />
+                            <Label Grid.Row="7" Grid.Column="0" Text="Atividade" HorizontalTextAlignment="Start" VerticalTextAlignment="End" VerticalOptions="End"/>
+                            <bp:BindablePicker Grid.Row="7" 
                                  Grid.Column="1" 
                                  Grid.ColumnSpan="4" 
                                  x:Name="pickerAtividades" 
@@ -70,7 +70,7 @@
                                  HorizontalOptions="FillAndExpand" 
                                  SelectedIndexChanged="OnAtividadeSelected"
                                  Title="Selecione uma atividade..."/>
-              <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4"
+                            <Button Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4"
                               x:Name="btnConfirmar"
                               Text="CONFIRMAR"
                               BackgroundColor="#2DBDB6"
@@ -79,10 +79,10 @@
                               BorderColor="Transparent"
                               HorizontalOptions="Center"
                               Clicked="OnConfClicked"/>
-            </Grid>
-          </ScrollView>
-        </StackLayout.Children>
-      </StackLayout>
-    </ScrollView>
-  </ContentPage.Content>
+                        </Grid>
+                    </ScrollView>
+                </StackLayout.Children>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

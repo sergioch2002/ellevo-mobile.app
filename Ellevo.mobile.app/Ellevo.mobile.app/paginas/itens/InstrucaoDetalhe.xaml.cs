@@ -1,6 +1,8 @@
 ﻿using Ellevo.mobile.app.objects;
 using Ellevo.mobile.app.paginas.novas;
 using System;
+using System.Net;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Ellevo.mobile.app.pages
@@ -16,9 +18,19 @@ namespace Ellevo.mobile.app.pages
             SizeChanged += OnSizeChanged;
             if(!string.IsNullOrEmpty(instrucaoId))
                 GetData();
-            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await Navigation.PushAsync(new NovaInstrucao()); ; }));
-            this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
-            this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
+            this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await MarcaLido(); }));
+        }
+        private async Task MarcaLido()
+        {
+            var response = await ApiWriter.SendDataToApi<Instrucao>("/api/v1/mob/instrucao/" + _instrucaoId + "/Lido/" + true, null);
+
+            if (response == HttpStatusCode.OK)
+            {
+                await DisplayAlert("Sucesso", "Instrução lida", "Sair");
+
+                await Navigation.PopAsync();
+                GetData();
+            }
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {

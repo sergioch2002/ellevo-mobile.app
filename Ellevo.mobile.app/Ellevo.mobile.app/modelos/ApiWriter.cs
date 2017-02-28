@@ -15,9 +15,14 @@ namespace Ellevo.mobile.app.objects
     {
         async public static Task<HttpStatusCode> SendDataToApi<T>(string endpoint, T data)
         {
-            StringContent queryString  = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-
             endpoint = endpoint.Insert(0, Sessao.UrlBase);
+            StringContent queryString = null;
+
+            if (data != null)
+            {
+                queryString = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+            }
+            
 
             HttpClientHandler handler = new HttpClientHandler()
             {

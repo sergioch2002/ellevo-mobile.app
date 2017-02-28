@@ -47,7 +47,6 @@
                         BorderColor="Transparent"
                         HorizontalOptions="Center"
                         Clicked="OnConfirmClicked"/>
-              <!--Faixa com dados do tramite/providenca-->
             </Grid>
           </ScrollView>
         </StackLayout.Children>

@@ -31,14 +31,7 @@
               <Label Grid.Row="1" Grid.Column="1" x:Name="lblRazaoValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
               <Label  Grid.Row="2" Grid.Column="0" x:Name="lblFantasia" HorizontalTextAlignment="End" FontAttributes="Bold" HorizontalOptions="Fill"/>
               <Label  Grid.Row="2" Grid.Column="1" x:Name="lblFantasiaValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-              <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnNovaInstr"
-                      Text="Nova Instrução"
-                      BackgroundColor="#2DBDB6"
-                      TextColor="White"
-                      BorderWidth="0"
-                      BorderColor="Transparent"
-                      Clicked="OnInstrClicked"
-                      HorizontalOptions="Center"/>
+              
               <StackLayout Padding="2" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
                 <Label x:Name="lblProvId" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold"/>
                 <Label x:Name="lblProvData" HorizontalTextAlignment="Start" FontSize="Small"/>
@@ -57,7 +50,15 @@
             <Button x:Name="btnNext" BackgroundColor="#2DBDB6" Clicked="OnNextClicked"/>
             <Label x:Name="lblPages" HorizontalOptions="EndAndExpand" VerticalOptions="End"/>
           </StackLayout>
-        </StackLayout>
+                    <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="btnNovaInstr"
+                      Text="Nova Instrução"
+                      BackgroundColor="#2DBDB6"
+                      TextColor="White"
+                      BorderWidth="0"
+                      BorderColor="Transparent"
+                      Clicked="OnInstrClicked"
+                      HorizontalOptions="Center"/>
+                </StackLayout>
       </StackLayout>
     </ScrollView>
   </ContentPage.Content>

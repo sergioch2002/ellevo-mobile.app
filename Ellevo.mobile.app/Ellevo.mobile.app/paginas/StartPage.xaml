@@ -2,22 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ellevo.mobile.app.StartPage"
-             Title="Página Inicial"
+             Title="Página de Acesso"
   BackgroundImage="fundosemlogo.png">
   <ContentPage.Content>
     <ScrollView>
       <StackLayout>
         <StackLayout.Children>
-          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 30, 0, 0">
+          <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Padding="0, 10, 0, 0">
             <Image Source="logomobile150x150.png"
                    HeightRequest="130"
                    WidthRequest="130"/>
             <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"/>
           </StackLayout>
 
-          <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 50, 0, 0">
+          <StackLayout VerticalOptions="CenterAndExpand" Padding="0, 20, 0, 0">
 
-            <StackLayout Padding="0, 0, 0, 40" VerticalOptions="Start">
+            <StackLayout Padding="0, 0, 0, 20" VerticalOptions="Start">
               <Label Text="ACESSO RESTRITO" HorizontalTextAlignment="Center"
                      VerticalTextAlignment="Start"
                      FontSize="Large"
@@ -39,13 +39,13 @@
             <StackLayout HorizontalOptions="Center"  Padding="0, 100, 0, 0">
               <Button x:Name="btnConfirma" Text="Confirma"
                       BackgroundColor="#2DBDB6"
-                      FontSize="Large"
+                      FontSize="Medium"
                       TextColor="White"
                       HorizontalOptions="Center"
                       VerticalOptions="Center"
                       Clicked="OnConfirmClicked"
-                      WidthRequest="160"
-                      HeightRequest="64"
+                      WidthRequest="130"
+                      HeightRequest="50"
                       BorderWidth="0"
                       BorderColor="Transparent"/>
             </StackLayout>

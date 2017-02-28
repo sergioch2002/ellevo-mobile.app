@@ -37,6 +37,8 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="controles\BindablePicker.cs" />
+    <Compile Include="EPaginacaoOrdem.cs" />
+    <Compile Include="Filtro.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="modelos\Acompanhamento.cs" />
     <Compile Include="modelos\ApiWriter.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="modelos\InstrucaoDestinatario.cs" />
     <Compile Include="modelos\Motivo.cs" />
     <Compile Include="modelos\Providencia.cs" />
+    <Compile Include="modelos\RemovedorHTML.cs" />
     <Compile Include="modelos\Status.cs" />
     <Compile Include="modelos\Tarefa.cs" />
     <Compile Include="modelos\Tramite.cs" />

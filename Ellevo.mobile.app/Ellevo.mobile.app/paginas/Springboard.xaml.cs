@@ -21,12 +21,20 @@ namespace Ellevo.mobile.app
             telaInicial = new TelaInicial();
             InitializeComponent();
             SizeChanged += OnSizeChanged;
+
             GetTotals(Sessao.UrlBase);
+
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
             this.BackgroundImage = Height > Width ? "fundosemlogo.png" : "fundosemlogoH1024.png";
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            GetTotals(Sessao.UrlBase);
         }
         public async void GetTotals(string endpoint)
         {
@@ -75,29 +83,29 @@ namespace Ellevo.mobile.app
         }
         async private void InstrucaoButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaInstrucoes());
+            await Navigation.PushAsync(new ListaInstrucoes(telaInicial.InstrucaoTotal));
         }
         async private void AcompanhamentoButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaAcompanhamentos());
+            await Navigation.PushAsync(new ListaAcompanhamentos(telaInicial.AcompanhamentosTotal));
         }
         async private void ChamadoButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaChamados());
+            await Navigation.PushAsync(new ListaChamados(telaInicial.ChamadosTotal));
         }
         async private void TramiteButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaTramites());
+            await Navigation.PushAsync(new ListaTramites(telaInicial.TramitesTotal));
         }
         async private void TarefaButtonTapped(object sender, EventArgs args)
         {
             
-            await Navigation.PushAsync(new ListaTarefas());
+            await Navigation.PushAsync(new ListaTarefas(telaInicial.TarefasTotal));
             waitActivityIndicator.IsRunning = false;
         }
         async private void ProvidenciaButtonTapped(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new ListaProvidencias());
+            await Navigation.PushAsync(new ListaProvidencias(telaInicial.ProvidenciasTotal));
         }
     }
 }

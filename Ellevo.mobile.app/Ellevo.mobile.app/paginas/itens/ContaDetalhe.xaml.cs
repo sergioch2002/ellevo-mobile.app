@@ -1,4 +1,5 @@
 ﻿using Ellevo.mobile.app.objects;
+using Ellevo.mobile.app.paginas.novas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado!", "Nova Instrução clicado.", "Fechar");
+            await Navigation.PushAsync(new NovaInstrucao2());
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {

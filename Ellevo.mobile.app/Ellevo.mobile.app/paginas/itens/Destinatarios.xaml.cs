@@ -15,13 +15,6 @@ namespace Ellevo.mobile.app.paginas.itens
         public Destinatarios()
         {
             InitializeComponent();
-            
-
-        }
-        public async Task GetData()
-        {
-            var grupo = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/DestinatariosGrupos");
-            GruposList.ItemsSource = grupo;
 
             InstrucaoDestinatario grupoSelecionado = new app.InstrucaoDestinatario();
 
@@ -33,6 +26,13 @@ namespace Ellevo.mobile.app.paginas.itens
                 await destUsu.GetData(grupoSelecionado);
                 await Navigation.PushModalAsync(destUsu);
             };
+        }
+        public async Task GetData()
+        {
+            var grupo = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/DestinatariosGrupos");
+            GruposList.ItemsSource = grupo;
+
+            
         }
         private async void OnSairClicked(object sender, EventArgs e)
         {

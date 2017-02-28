@@ -12,14 +12,23 @@ namespace Ellevo.mobile.app.pages
 {
     public partial class AprovacoesInicial : TabbedPage
     {
+        public int numTarefas { get; set; }
+        public int numChamados { get; set; }
         public AprovacoesInicial()
         {
+            GetData();
             this.Title = "Aprovações";
-            this.Children.Add(new ListaAprovacoesChamados());
-            this.Children.Add(new ListaAprovacoesTarefas());
+            this.Children.Add(new ListaAprovacoesChamados(numChamados));
+            this.Children.Add(new ListaAprovacoesTarefas(numTarefas));
             this.BarBackgroundColor = Color.FromHex("#2DBDB6");
             
         }
 
+        private async Task GetData()
+        {
+            numTarefas = await ApiReader.GetDataFromApi<int>("/api/v1/mob/tarefa/TotalEmAprovacao");
+            numChamados = await ApiReader.GetDataFromApi<int>("/api/v1/mob/chamado/TotalEmAprovacao");
+            
+        }
     }
 }

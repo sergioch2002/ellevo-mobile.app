@@ -11,5 +11,6 @@ namespace Ellevo.mobile.app.objects
         public static string UrlBase { get; set; }
         public static Token Token { get; set; }
         public static string Usuario { get; set; }
+        public static int ItensPorPagina { get; set; }
     }
 }

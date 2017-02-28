@@ -1,4 +1,5 @@
-﻿using Ellevo.mobile.app.objects;
+﻿using Ellevo.mobile.app.modelos;
+using Ellevo.mobile.app.objects;
 using Ellevo.mobile.app.paginas.itens;
 using Ellevo.mobile.app.paginas.novas;
 using System;
@@ -61,7 +62,7 @@ namespace Ellevo.mobile.app.pages.itens
         }
         private async void OnInstrClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado!", "Nova Instrução clicado.", "Fechar");
+            await Navigation.PushAsync(new NovaInstrucao2());
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -153,19 +154,19 @@ namespace Ellevo.mobile.app.pages.itens
             this._isHtml = tramite.TipoDescricao.ToLower().Contains(".htm") ? true : false;
             lblProvData.Text = tramite.Data.Value.ToString();
             lblPages.Text = this._currentTramite.ToString() + "-" + this._numTramites.ToString();
-            if(this._isHtml)
-            {
-                var browser = new WebView
-                {
-                    HeightRequest = 180
-                };
-                var htmlSource = new HtmlWebViewSource
-                {
-                    Html = tramite.Descricao.Replace(@"\", string.Empty)
-            };
-                browser.Source = htmlSource;
-            }
-            textEditor.Text = tramite.Descricao;
+            //if(this._isHtml)
+            //{
+            //    var browser = new WebView
+            //    {
+            //        HeightRequest = 180
+            //    };
+            //    var htmlSource = new HtmlWebViewSource
+            //    {
+            //        Html = tramite.Descricao.Replace(@"\", string.Empty)
+            //};
+            //    browser.Source = htmlSource;
+            //}
+            textEditor.Text = RemovedorHTML.RemoveTagsCharArray(tramite.Descricao);
         }
     }
 }
