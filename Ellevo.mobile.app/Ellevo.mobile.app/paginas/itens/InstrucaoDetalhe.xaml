@@ -31,31 +31,22 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-
                             <Label Grid.Row="0" Grid.Column="0" x:Name="lblOrigem" HorizontalTextAlignment="Start" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
                             <Label Grid.Row="0" Grid.Column="1" x:Name="lblId" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
                             <Label Grid.Row="1" Grid.Column="0" x:Name="lblData" Text="Data:" HorizontalTextAlignment="Start" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
                             <Label Grid.Row="1" Grid.Column="1" x:Name="lblDataValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
                             <Label  Grid.Row="2" Grid.Column="0" x:Name="lblDe" Text="De:" HorizontalTextAlignment="Start" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
                             <Label  Grid.Row="2" Grid.Column="1" x:Name="lblDeValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
                             <Label  Grid.Row="3" Grid.Column="0" x:Name="lblPara" Text="Para:" HorizontalTextAlignment="Start" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
                             <Label  Grid.Row="3"  Grid.Column="1" Grid.ColumnSpan="2" x:Name="lblParaValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
                             <Label  Grid.Row="6" Grid.Column="0" x:Name="lblDescricao" Text="Descrição:" HorizontalTextAlignment="Start" FontAttributes="Bold" HorizontalOptions="Fill"/>
-
                             <Label  Grid.Row="6" Grid.Column="1" Grid.RowSpan="2" x:Name="lblDescValor" HorizontalTextAlignment="Start" HorizontalOptions="Start"/>
-
+                            
                         </Grid>
                     </ScrollView>
                 </StackLayout.Children>
             </StackLayout>
+            
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
