@@ -37,8 +37,8 @@ namespace Ellevo.mobile.app
             animation.Commit(btnConfirma, "Loop", length: 250);
 
             if(string.IsNullOrEmpty(URL.Text))
-                URL.Text = "http://es044/trunk";
-                //URL.Text = "http://desenv.0800net.com.br/mobile";
+                //URL.Text = "http://es044/trunk";
+                URL.Text = "http://desenv.0800net.com.br/mobile";
 
             if (string.IsNullOrEmpty(URL.Text))
                 return;
