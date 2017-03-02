@@ -6,6 +6,7 @@ using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
 using Foundation;
 using UIKit;
+using Ellevo.mobile.app;
 
 namespace Ellevo.mobile.app.iOS
 {
