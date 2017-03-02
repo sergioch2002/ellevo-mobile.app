@@ -28,11 +28,11 @@ namespace Ellevo.mobile.app.iOS
             // Newer version of Xamarin Studio and Visual Studio provide the
             // ENABLE_TEST_CLOUD compiler directive in the Debug configuration,
             // but not the Release configuration.
-//#if ENABLE_TEST_CLOUD
-//Xamarin.Calabash.Start();
-//#endif
-            global::Xamarin.Forms.Forms.Init();
+            //#if ENABLE_TEST_CLOUD
+            //Xamarin.Calabash.Start();
+            //#endif
             MobileCenter.Configure("e4e9727d-f4cf-4d3e-acc2-e2f08bec4fb5");
+            global::Xamarin.Forms.Forms.Init();
             LoadApplication(new Ellevo.mobile.app.App());
 
             
