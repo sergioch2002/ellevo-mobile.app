@@ -22,6 +22,7 @@ namespace Ellevo.mobile.app
 
         protected override void OnStart()
         {
+            MobileCenter.Start(typeof(Analytics), typeof(Crashes));
             // Handle when your app starts
         }
 
