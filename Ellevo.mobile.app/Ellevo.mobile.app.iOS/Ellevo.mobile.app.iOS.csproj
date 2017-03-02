@@ -66,6 +66,9 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
+    <IOSDebuggerPort>10000</IOSDebuggerPort>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,6 +157,24 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
     <BuildIpa>False</BuildIpa>
     <IpaIncludeArtwork>False</IpaIncludeArtwork>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS Release|iPhoneSimulator'">
+    <OutputPath>bin\iPhoneSimulator\iOS Release\</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS Release|iPhone'">
+    <OutputPath>bin\iPhone\iOS Release\</OutputPath>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
