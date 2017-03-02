@@ -10,27 +10,34 @@ namespace Ellevo.mobile.app.pages
     public partial class InstrucaoDetalhe : ContentPage
     {
         private string _instrucaoId;
+        private bool _lida { get; set; } = false;
         public InstrucaoDetalhe(string instrucaoId)
         {
             _instrucaoId = instrucaoId;
 
             InitializeComponent();
             SizeChanged += OnSizeChanged;
-            if(!string.IsNullOrEmpty(instrucaoId))
-                GetData();
-            this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await MarcaLido(); }));
+            //if(!string.IsNullOrEmpty(instrucaoId))
+            //    GetData();
+            
         }
         private async Task MarcaLido()
         {
-            var response = await ApiWriter.SendDataToApi<Instrucao>("/api/v1/mob/instrucao/" + _instrucaoId + "/Lido/" + true, null);
-
+            var response = await ApiWriter.SendDataToApi<Instrucao>("/api/v1/mob/instrucao/" + _instrucaoId + "/Lido/" + !_lida, null);
+            string lidaStatus = !_lida ? "lida" : "não lida";
             if (response == HttpStatusCode.OK)
             {
-                await DisplayAlert("Sucesso", "Instrução lida", "Sair");
+                await DisplayAlert("Sucesso", "Instrução marcada como " + lidaStatus, "Sair");
 
                 await Navigation.PopAsync();
-                GetData();
+                //GetData();
             }
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if (!string.IsNullOrEmpty(_instrucaoId))
+                GetData();
         }
         private void OnSizeChanged(object sender, EventArgs e)
         {
@@ -71,6 +78,10 @@ namespace Ellevo.mobile.app.pages
                 foreach (var item in instrucao.Destinatarios)
                     lblParaValor.Text += item.Nome + "; ";
                 lblDescValor.Text = instrucao.Descricao;
+                _lida = instrucao.Lida.Value;
+
+                this.ToolbarItems.Add(
+                new ToolbarItem("Lido", _lida ? "remover.png" : "lido.png", async () => { await MarcaLido(); }));
             }
             else
             {

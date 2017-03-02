@@ -32,8 +32,8 @@ namespace Ellevo.mobile.app.pages.itens
             btnNext.Text = "\u003e\u003e";
             btnBack.Text = "\u003c\u003c";
             lblPages.Text = "Page\n10/10";
-            this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await DisplayAlert("Clicado!", "Adicionar clicado.", "Fechar"); }));
-            this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
+            //this.ToolbarItems.Add(new ToolbarItem("Adicionar", "adicionar.png", async () => { await DisplayAlert("Clicado!", "Adicionar clicado.", "Fechar"); }));
+            //this.ToolbarItems.Add(new ToolbarItem("Remover", "remover.png", async () => { await DisplayAlert("Clicado!", "Remover clicado.", "Fechar"); }));
             this.ToolbarItems.Add(new ToolbarItem("Lido", "lido.png", async () => { await DisplayAlert("Clicado!", "Lido clicado.", "Fechar"); }));
         }
         private async void OnInstrClicked(object sender, EventArgs e)

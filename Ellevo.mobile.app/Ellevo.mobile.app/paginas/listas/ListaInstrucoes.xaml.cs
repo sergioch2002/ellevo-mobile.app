@@ -27,7 +27,7 @@ namespace Ellevo.mobile.app
 
             InitializeComponent();
             SizeChanged += OnSizeChanged;
-            GetData();
+            //GetData();
             btnNext.Text = "\u003e\u003e";
             btnBack.Text = "\u003c\u003c";
 
