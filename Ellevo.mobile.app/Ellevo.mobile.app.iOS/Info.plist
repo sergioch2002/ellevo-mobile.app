@@ -25,7 +25,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Ellevo Mobile</string>
 	<key>CFBundleIdentifier</key>
-	<string>Ellevo Mobile</string>
+	<string>br.com.ellevo.mobile</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
@@ -42,7 +42,6 @@
 		<string>Icon-Small-40@2x.png</string>
 		<string>Icon-Small.png</string>
 		<string>Icon-Small@2x.png</string>
-		<string>Icon-83.5@2x.png</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
