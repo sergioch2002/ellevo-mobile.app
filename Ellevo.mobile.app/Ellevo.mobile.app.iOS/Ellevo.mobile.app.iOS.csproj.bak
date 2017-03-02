@@ -8,7 +8,7 @@
     <ProjectGuid>{BD64BF90-CCFF-4D5B-9B30-3A1D7BE51E5C}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ellevo.mobile.app.iOS</RootNamespace>
+    <RootNamespace>APFLED2H5V.br.com.ellevo.mobile</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Ellevo.mobile.app.iOS</AssemblyName>
     <NuGetPackageImportStamp>
@@ -117,7 +117,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchFloat32>False</MtouchFloat32>
     <IpaIncludeArtwork>False</IpaIncludeArtwork>
-    <CodesignProvision>5718cb6d-4e92-406c-a0a4-f958b2309016</CodesignProvision>
+    <CodesignProvision>e6a1f66a-1feb-4c55-ba8f-d795d227d544</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
