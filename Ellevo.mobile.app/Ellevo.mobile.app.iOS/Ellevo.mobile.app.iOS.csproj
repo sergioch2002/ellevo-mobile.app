@@ -123,6 +123,7 @@
     <MtouchFloat32>False</MtouchFloat32>
     <IpaIncludeArtwork>False</IpaIncludeArtwork>
     <CodesignProvision>5718cb6d-4e92-406c-a0a4-f958b2309016</CodesignProvision>
+    <MtouchNoSymbolStrip>False</MtouchNoSymbolStrip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
