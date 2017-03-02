@@ -253,6 +253,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\Icon-83.5%402x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fundosemlogoH1024.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
