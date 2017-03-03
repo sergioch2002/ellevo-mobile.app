@@ -32,7 +32,7 @@ namespace Ellevo.mobile.app.iOS
             //#endif
             MobileCenter.Configure("e4e9727d-f4cf-4d3e-acc2-e2f08bec4fb5");
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new Ellevo.mobile.app.App());
+            LoadApplication(new App());
 
             
 

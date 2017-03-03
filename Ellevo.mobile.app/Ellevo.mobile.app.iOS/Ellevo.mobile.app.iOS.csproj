@@ -262,12 +262,6 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ellevo.mobile.app\Ellevo.mobile.app.csproj">
-      <Project>{e9f9c2ce-8ef6-4ab3-b2bc-425abe71e191}</Project>
-      <Name>Ellevo.mobile.app</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\logomobile150x150.png" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ellevo.mobile.app\Ellevo.mobile.app.csproj">
+      <Project>{e9f9c2ce-8ef6-4ab3-b2bc-425abe71e191}</Project>
+      <Name>Ellevo.mobile.app</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
