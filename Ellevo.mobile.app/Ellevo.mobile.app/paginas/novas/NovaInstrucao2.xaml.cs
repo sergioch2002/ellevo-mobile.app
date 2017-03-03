@@ -72,7 +72,7 @@ namespace Ellevo.mobile.app.paginas.novas
             
             _usuario = new InstrucaoDestinatario();
         }
-        private async Task GetData()
+        private async void GetData()
         {
             var grupos = await ApiReader.GetDataFromApi<IEnumerable<InstrucaoDestinatario>>("/api/v1/mob/instrucao/DestinatariosGrupos");
 

@@ -24,7 +24,7 @@ namespace Ellevo.mobile.app.pages
             
         }
 
-        private async Task GetData()
+        private async void GetData()
         {
             numTarefas = await ApiReader.GetDataFromApi<int>("/api/v1/mob/tarefa/TotalEmAprovacao");
             numChamados = await ApiReader.GetDataFromApi<int>("/api/v1/mob/chamado/TotalEmAprovacao");

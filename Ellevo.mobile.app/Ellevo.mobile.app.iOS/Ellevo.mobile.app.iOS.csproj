@@ -42,7 +42,7 @@
     <ConsolePause>false</ConsolePause>
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchDebug>True</MtouchDebug>
+    <MtouchDebug>False</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchUseLlvm>False</MtouchUseLlvm>
@@ -54,8 +54,8 @@
     <MtouchFloat32>False</MtouchFloat32>
     <CodesignKey>iPhone Developer: Clayton Lourenco (A8H3M46NK8)</CodesignKey>
     <CodesignProvision>e38b102f-52df-4835-8290-27d615e36e30</CodesignProvision>
-    <IOSDebugOverWiFi>False</IOSDebugOverWiFi>
-    <IOSDebuggerPort>10000</IOSDebuggerPort>
+    <BuildIpa>False</BuildIpa>
+    <IpaIncludeArtwork>False</IpaIncludeArtwork>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -181,7 +181,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />
-    <None Include="Ellevo.mobile.app.iOS_TemporaryKey.pfx" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />

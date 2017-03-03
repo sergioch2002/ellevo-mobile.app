@@ -15,7 +15,6 @@ namespace Ellevo.mobile.app.pages.itens
         private string _contaId;
         private int _currentAcompanhamento;
         private int _numAcompanhamentos;
-        private bool _isHtml;
         public ContaDetalhe(string contaId)
         {
             this._contaId = contaId;
@@ -88,18 +87,18 @@ namespace Ellevo.mobile.app.pages.itens
             //this._isHtml = tramite.TipoDescricao.ToLower().Contains(".htm") ? true : false;
             lblProvData.Text = acompanhamento.Data.ToString();
             lblPages.Text = this._currentAcompanhamento.ToString() + "-" + this._numAcompanhamentos.ToString();
-            if (this._isHtml)
-            {
-                var browser = new WebView
-                {
-                    HeightRequest = 180
-                };
-                var htmlSource = new HtmlWebViewSource
-                {
-                    Html = "<html><body>" + acompanhamento.AcompanhamentoDesc.Replace(@"\", string.Empty) + "</body></html>"
-                };
-                browser.Source = htmlSource;
-            }
+            //if (this._isHtml)
+            //{
+            //    var browser = new WebView
+            //    {
+            //        HeightRequest = 180
+            //    };
+            //    var htmlSource = new HtmlWebViewSource
+            //    {
+            //        Html = "<html><body>" + acompanhamento.AcompanhamentoDesc.Replace(@"\", string.Empty) + "</body></html>"
+            //    };
+            //    browser.Source = htmlSource;
+            //}
             textEditor.Text = acompanhamento.AcompanhamentoDesc;
         }
         private async void GetData()

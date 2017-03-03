@@ -96,5 +96,20 @@ namespace Ellevo.mobile.app.pages
                 this.Content.HorizontalOptions = LayoutOptions.Center;
             }
         }
+
+        private void bt1_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt2_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt3_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

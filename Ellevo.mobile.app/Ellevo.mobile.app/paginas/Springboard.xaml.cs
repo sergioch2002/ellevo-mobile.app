@@ -2,14 +2,10 @@
 using Ellevo.mobile.app.pages;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace Ellevo.mobile.app
 {

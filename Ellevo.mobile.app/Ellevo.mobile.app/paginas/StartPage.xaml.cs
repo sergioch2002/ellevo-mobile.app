@@ -1,18 +1,16 @@
 ﻿using Ellevo.mobile.app.objects;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
+[assembly: Preserve(AllMembers =true)]
 namespace Ellevo.mobile.app
 {
+    
     public partial class StartPage : ContentPage
     {
         public StartPage()
