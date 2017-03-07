@@ -15,7 +15,7 @@ using Xamarin.Forms.Xaml;
 namespace Ellevo.mobile.app.paginas.itens
 {
 
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+ //   [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DestinatariosUsuarios : ContentPage
     {
         public event EventHandler UsuariosAdicionados;

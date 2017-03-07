@@ -108,7 +108,7 @@
     <CodesignKey>iPhone Distribution: ELLEVO SOLUCOES EM TECNOLOGIA DA INFORMACAO SA (APFLED2H5V)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchSdkVersion>10.2</MtouchSdkVersion>
-    <MtouchLink>Full</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>False</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
